@@ -52,7 +52,7 @@ table {
 	border-spacing: 0;
 }
 h1 {
-    font-family: 'Purple Purse', sans-serif;
+    font-family: 'Luckiest Guy', cursive;
 }
 
 
@@ -67,15 +67,57 @@ h1 {
     overflow: hidden;
     z-index: 1;
     border-bottom: 1px #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .meadow h1 {
-    
+    position:absolute;
+    bottom: 50vh;
     text-align: center;
     color: #FFF;
     font-size: 10vw;
     line-height: 10vw;
+    z-index:3;
+    text-shadow: 0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
 }
+
+@media (orientation: portrait) {
+    .meadow h1 {
+        font-size:20vw;
+        line-height: 20vw;
+    }
+}
+
+.cloud {
+    position: absolute;
+    bottom: 30vh;
+    left:0;
+    z-index: 4;
+    animation: float 100s linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(50vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
 
 /*   Sunrise  */
 
@@ -90,15 +132,25 @@ h1 {
 
 .sunrise {
     position: absolute;
-    bottom: calc(-50vw + 50px);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    width: 100vw;
-    height: 100vw;
     overflow: hidden;
     z-index: 1;
     animation: rotate 200s linear infinite;
+}
+
+@media (orientation: landscape) {
+    .sunrise {
+        width: 100vw;
+        height: 100vw;
+        bottom: calc(-50vw + 65px);
+    }
+}
+
+@media (orientation: portrait) {
+    .sunrise {
+        width: 100vh;
+        height: 100vh;
+        bottom: calc(-50vh + 65px);
+    }
 }
 
 .sunrise .stripes {
@@ -157,8 +209,10 @@ h1 {
 
 nav {
     position: sticky;
+    top:0;
     background: url('../images/bg.png');
     z-index: 50;
+    border-top: solid 1px #000;
 }
 
 nav ul {
@@ -172,15 +226,17 @@ nav ul li {
     font-size: 2rem;
     font-family: sans-serif;
     padding: 20px;
+    text-shadow: 1px 3px 5px #000;
 }
 
 .main {
     position: relative;
-    z-index: 50;
+    z-index: 2;
     height: 2000px;
     background: #000;
     color: #FFF;
     background: url('../images/earth.png');
+    padding-top: 50px;
 }
 
 .main h2 {
