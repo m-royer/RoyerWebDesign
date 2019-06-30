@@ -79,7 +79,7 @@ h1 {
     color: #FFF;
     font-size: 10vw;
     line-height: 10vw;
-    z-index:3;
+    z-index:5;
     text-shadow: 0 1px 0 #ccc,
     0 2px 0 #c9c9c9,
     0 3px 0 #bbb,
@@ -101,32 +101,87 @@ h1 {
     }
 }
 
+
+
+.bg-cloud {
+    position: absolute;
+    top:0vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('../images/cloud_4307.png');
+    background-repeat:no-repeat;
+    background-position:center 20%;
+    background-size:contain;
+    transform: scale(1.3);
+    z-index:3;
+    opacity:0.7;
+}
+
 .cloud {
     position: absolute;
-    bottom: 30vh;
+    top: 20vh;
     left:0;
-    z-index: 4;
-    animation: float 100s linear;
+    opacity: 0.9;
+    z-index: 10;
+    animation: cloud-scroll 120s linear infinite;
+}
+
+.cloud img {
+    width: 100%;
+    height:50%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .cloud img {
+        width:50%;
+        height:auto;
+    }
+}
+
+@keyframes cloud-scroll {
+    0% {
+        transform: translateX(20vw);
+    }
+    100% {
+        transform: translateX(80vw);
+    }
+}
+
+
+.float {
+    animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
-    0% {
-        transform: translateX(50vw);
+    0%,100% {
+        transform: translateY(-5px);
     }
-    100% {
-        transform: translateX(0vw);
+    50% {
+        transform: translateY(5px);
     }
 }
 
+.cloud2 {
+    position:absolute;
+    top:20vh;
+    left:0;
+    z-index:4;
+    opacity: 0.7;
+    animation: cloud-scroll2 50s linear infinite;
+}
 
-/*   Sunrise  */
+.cloud2 img {
+    width:150%;
+    height:auto;
+}
 
-@keyframes rotate {
+@keyframes cloud-scroll2 {
     0% {
-        transform: rotate(0deg);
+        transform: translateX(0);
     }
     100% {
-        transform: rotate(360deg);
+        transform: translateX(-10vw);
     }
 }
 
@@ -141,7 +196,7 @@ h1 {
     .sunrise {
         width: 100vw;
         height: 100vw;
-        bottom: calc(-50vw + 65px);
+        bottom: calc(-50vw + 80px);
     }
 }
 
@@ -150,6 +205,15 @@ h1 {
         width: 100vh;
         height: 100vh;
         bottom: calc(-50vh + 65px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -210,9 +274,11 @@ h1 {
 nav {
     position: sticky;
     top:0;
-    background: url('../images/bg.png');
+    background: url('../images/lawn.png');
+    background-position-y: -15px;
     z-index: 50;
-    border-top: solid 1px #000;
+    border-top: solid 0 #000;
+    margin-top: -25px;
 }
 
 nav ul {
@@ -231,7 +297,7 @@ nav ul li {
 
 .main {
     position: relative;
-    z-index: 2;
+    z-index: 40;
     height: 2000px;
     background: #000;
     color: #FFF;
