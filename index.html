@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-    <header>
+    <header role="banner" id="home">
         <h1>Royer Web Design</h1>
         <div class="bg-cloud"></div>
         <div class="sunrise">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="grass"></div>
-        <nav>
+        <nav role="navigation">
             <ul>
                 <li>Home</li>
                 <li>My Work</li>
@@ -42,8 +42,35 @@
     </header>
     
     
-    <main role="main">
+    <main role="main" id="main">
         <h2>My Work</h2>
+        <div class="under-construction">Under Construction</div>
+    </main>
+
+    <section role="form" id="contact">
+        <h2>Contact Me</h2>
+        <form action="contact.php" method="POST">
+            <div>
+                <label>Name:
+                    <input type="text">
+                </label>
+            </div>
+            <div>
+                <label>Subject:
+                    <input type="text">
+                </label>
+            </div>
+            <div>
+                <textarea cols="25" rows="5"></textarea>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Send" disabled>
+            </div>
+        </form>
     </section>
+
+    <footer role="contentinfo">
+        &copy; 2019 Michael Royer
+    </footer>
 </body>
 </html>
