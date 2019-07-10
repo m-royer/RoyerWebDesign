@@ -51,7 +51,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-h1 {
+h1,h2 {
     font-family: 'Luckiest Guy', cursive;
 }
 
@@ -60,8 +60,8 @@ h1 {
 
 /*  Big green meadow thing  */
 
-.meadow {
-    height: calc(100vh - 70px);
+header {
+    height: 100vh;
     background-image: url('../images/bg.png');
     background-repeat: repeat;
     overflow: hidden;
@@ -72,7 +72,7 @@ h1 {
     align-items: flex-end;
 }
 
-.meadow h1 {
+header h1 {
     position:absolute;
     bottom: 50vh;
     text-align: center;
@@ -95,7 +95,7 @@ h1 {
 }
 
 @media (orientation: portrait) {
-    .meadow h1 {
+    header h1 {
         font-size:20vw;
         line-height: 20vw;
     }
@@ -113,75 +113,23 @@ h1 {
     background-repeat:no-repeat;
     background-position:center 20%;
     background-size:contain;
-    transform: scale(1.3);
     z-index:3;
     opacity:0.7;
+    animation: cloud-scroll 40s ease-in-out alternate infinite;
 }
 
-.cloud {
-    position: absolute;
-    top: 20vh;
-    left:0;
-    opacity: 0.9;
-    z-index: 10;
-    animation: cloud-scroll 120s linear infinite;
-}
-
-.cloud img {
-    width: 100%;
-    height:50%;
-}
-
-@media only screen and (max-device-width: 480px) {
-    .cloud img {
-        width:50%;
-        height:auto;
+@media (orientation: portrait) {
+    .bg-cloud {
+        background-position: center 40%;
     }
 }
 
 @keyframes cloud-scroll {
     0% {
-        transform: translateX(20vw);
+        transform: translateX(-5vw);
     }
     100% {
-        transform: translateX(80vw);
-    }
-}
-
-
-.float {
-    animation: float 5s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%,100% {
-        transform: translateY(-5px);
-    }
-    50% {
-        transform: translateY(5px);
-    }
-}
-
-.cloud2 {
-    position:absolute;
-    top:20vh;
-    left:0;
-    z-index:4;
-    opacity: 0.7;
-    animation: cloud-scroll2 50s linear infinite;
-}
-
-.cloud2 img {
-    width:150%;
-    height:auto;
-}
-
-@keyframes cloud-scroll2 {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-10vw);
+        transform: translateX(5vw);
     }
 }
 
@@ -268,34 +216,70 @@ h1 {
     z-index: 5;
 }
 
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    background: url('../images/lawn.png');
+    z-index: 50;
+}
+
 
 /*  Nav bar  */
 
 nav {
-    position: sticky;
-    top:0;
-    background: url('../images/lawn.png');
-    background-position-y: -15px;
-    z-index: 50;
-    border-top: solid 0 #000;
-    margin-top: -25px;
-}
+    position:sticky;
+    width: 100%;
+    top: 0;
+    z-index:52;
+    background: url('../images/bg.png');
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}   
 
 nav ul {
     display:flex;
+    flex-wrap:nowrap;
     justify-content: center;
     margin: 0 auto;
+    z-index: 54;
 }
 
 nav ul li {
     color: #FFF;
+    font-family: 'Luckiest Guy', cursive;
     font-size: 2rem;
-    font-family: sans-serif;
-    padding: 20px;
-    text-shadow: 1px 3px 5px #000;
+    line-height: 2rem;
+    text-shadow: 0 1px 0 #ccc,
+    0 4px 1px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2);
+    padding: 10px 20px;
 }
 
-.main {
+@media (orientation: portrait) {
+    nav ul li {
+        font-size: 5vw;
+        line-height: 5vw;
+        padding: 10px;
+    }
+}
+
+nav ul li:hover {
+    color: rgb(69, 121, 15);
+    text-shadow: 0 1px 0 rgb(41, 73, 6),
+    0 4px 1px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+main {
     position: relative;
     z-index: 40;
     height: 2000px;
@@ -305,8 +289,15 @@ nav ul li {
     padding-top: 50px;
 }
 
-.main h2 {
+main h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 5vw;
+    line-height: 5vw;
+    text-shadow: 0 1px 0 rgb(41, 73, 6),
+    0 4px 1px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2);
 }
 
