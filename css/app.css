@@ -67,14 +67,12 @@ header {
     overflow: hidden;
     z-index: 1;
     border-bottom: 1px #000;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
 
 header h1 {
     position:absolute;
     bottom: 50vh;
+    width:100%;
     text-align: center;
     color: #FFF;
     font-size: 10vw;
@@ -134,17 +132,14 @@ header h1 {
 }
 
 .sunrise {
-    position: absolute;
     overflow: hidden;
     z-index: 1;
-    animation: rotate 200s linear infinite;
 }
 
 @media (orientation: landscape) {
     .sunrise {
-        width: 100vw;
-        height: 100vw;
-        bottom: calc(-50vw + 80px);
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -166,14 +161,14 @@ header h1 {
 }
 
 .sunrise .stripes {
-    position:absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vw;
     background: url('../images/radial-stripes-light.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     z-index: 2;
+    animation: rotate 200s linear infinite;
 }
 
 .sunrise .stripes .glow {
@@ -305,8 +300,8 @@ main h2 {
 
 .under-construction {
     margin: 0 auto;
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 544px;
     font-size: 2rem;
     color: #FFFC61;
     text-indent: -9999px;
@@ -319,9 +314,10 @@ main h2 {
 #contact {
     position:relative;
     color: #FFF;
-    height: 500px;
+    height: 800px;
     background: url('../images/prism.png');
     z-index:10;
+    border-top: solid 1px #AAA;
 }
 
 #contact h2 {
@@ -334,10 +330,16 @@ main h2 {
     0 3px 5px rgba(0,0,0,.2),
     0 5px 10px rgba(0,0,0,.25),
     0 10px 10px rgba(0,0,0,.2);
+    padding: 50px 0;
+}
+
+#contact p {
+    text-align:center;
 }
 
 form {
     text-align:center;
+    display:none;
 }
 
 form input {
@@ -353,6 +355,7 @@ form .submit-button {
 
 footer {
     background: #222;
+    border-top: solid 1px #444;
     color: #AAA;
     text-align: center;
     padding: 5px;
