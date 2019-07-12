@@ -54,6 +54,10 @@ table {
 h1,h2 {
     font-family: 'Luckiest Guy', cursive;
 }
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 
 
@@ -147,7 +151,6 @@ header h1 {
     .sunrise {
         width: 100vh;
         height: 100vh;
-        bottom: calc(-50vh + 65px);
     }
 }
 
@@ -163,6 +166,7 @@ header h1 {
 .sunrise .stripes {
     width: 100vw;
     height: 100vw;
+    margin-top: calc(100vh - 50vw - 70px);
     background: url('../images/radial-stripes-light.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -225,8 +229,9 @@ header h1 {
 
 nav {
     position:sticky;
+    top:0;
     width: 100%;
-    top: 0;
+    margin-top:-50px;
     z-index:52;
     background: url('../images/bg.png');
     border-top: solid 1px #000;
@@ -275,14 +280,10 @@ nav ul li:hover {
 }
 
 main {
-    position: relative;
-    z-index: 40;
-    height: 800px;
     background: #000;
     color: #FFF;
     background: url('../images/earth.png');
     padding-top: 50px;
-    z-index:56;
     text-align: center;
 }
 
@@ -290,33 +291,17 @@ main h2 {
     text-align: center;
     font-size: 5vw;
     line-height: 5vw;
-    text-shadow: 0 1px 0 rgb(41, 73, 6),
-    0 4px 1px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2);
-}
-
-.under-construction {
-    margin: 0 auto;
-    width: 1000px;
-    height: 544px;
-    font-size: 2rem;
-    color: #FFFC61;
-    text-indent: -9999px;
-    background: url('../images/under_construction.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    text-shadow: 0 1px 0 rgb(180, 180, 180),
+    0 3px 0 rgb(170, 170, 170),
+    0 4px 0 rgb(165, 165, 165),
+    0 5px 0 rgb(150, 150, 150),
+    0 0 20px rgba(252, 240, 171, 0.3);
 }
 
 #contact {
-    position:relative;
     color: #FFF;
     height: 800px;
     background: url('../images/prism.png');
-    z-index:10;
     border-top: solid 1px #AAA;
 }
 
@@ -324,12 +309,10 @@ main h2 {
     text-align: center;
     font-size: 5vw;
     line-height: 5vw;
-    text-shadow: 0 1px 0 rgb(41, 73, 6),
-    0 4px 1px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2);
+    text-shadow: 0 1px 0 rgb(180, 180, 180),
+    0 3px 0 rgb(170, 170, 170),
+    0 4px 0 rgb(165, 165, 165),
+    0 5px 0 rgb(150, 150, 150);
     padding: 50px 0;
 }
 
