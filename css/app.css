@@ -105,37 +105,83 @@ header h1 {
 
 
 
-.bg-cloud {
+/* subtext */
+.titles {
     position: absolute;
-    top:0vh;
-    left: 0;
     width: 100vw;
-    height: 100vh;
-    background: url('../images/cloud_4307.png');
-    background-repeat:no-repeat;
-    background-position:center 20%;
-    background-size:contain;
-    z-index:3;
-    opacity:0.7;
-    animation: cloud-scroll 40s ease-in-out alternate infinite;
+    bottom: 45vh;
+    left: 0;
+    display: flex;
+    z-index: 6;
+    justify-content: center;
+}
+
+.titles span {
+    color: #FFF;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    padding: 0 40px 0 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.fab {
+    margin-right: 10px;
 }
 
 @media (orientation: portrait) {
-    .bg-cloud {
-        background-position: center 40%;
+    .titles span {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 0 10px 0 10px;
     }
 }
+
+
+
+
+/* cloud */
+.cloud {
+    width: 80vw;
+    height: 30vh;
+    border-radius: 50%;
+    position: absolute;
+    bottom:calc(50vh + 200px);
+    left: calc(-300px + 10vw);
+    z-index: 4;
+    animation: none;/* cloud-scroll 100s linear infinite alternate;*/
+  }
+  
+  #cloud-back {
+    filter: url(#filter-back);
+    box-shadow: 300px 300px 30px -20px #fff;
+  }
+  
+  #cloud-mid {
+    filter: url(#filter-mid);
+    box-shadow: 300px 340px 70px -60px rgba(158, 168, 179, 0.5);
+  }
+  
+  #cloud-front {
+    filter: url(#filter-front);
+    box-shadow: 300px 370px 60px -100px rgba(0, 0, 0, 0.3);
+  }
 
 @keyframes cloud-scroll {
     0% {
-        transform: translateX(-5vw);
+        transform: translateX(5vw);
     }
     100% {
-        transform: translateX(5vw);
+        transform: translateX(-5vw);
     }
 }
 
+
+
+/* background */
 .sunrise {
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: hidden;
     z-index: 1;
 }
@@ -173,6 +219,12 @@ header h1 {
     background-position: center;
     z-index: 2;
     animation: rotate 200s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sunrise .stripes {
+        animation: none;
+    }
 }
 
 .sunrise .stripes .glow {
@@ -225,8 +277,8 @@ header h1 {
 }
 
 
-/*  Nav bar  */
 
+/*  Nav bar  */
 nav {
     position:sticky;
     top:0;
@@ -239,7 +291,7 @@ nav {
 }   
 
 nav ul {
-    display:flex;
+    display: flex;
     flex-wrap:nowrap;
     justify-content: center;
     margin: 0 auto;
@@ -247,6 +299,7 @@ nav ul {
 }
 
 nav ul li {
+    text-indent: -9999px;
     color: #FFF;
     font-family: 'Luckiest Guy', cursive;
     font-size: 2rem;
@@ -279,6 +332,9 @@ nav ul li:hover {
     cursor: pointer;
 }
 
+
+
+
 main {
     background: #000;
     color: #FFF;
@@ -297,6 +353,9 @@ main h2 {
     0 5px 0 rgb(150, 150, 150),
     0 0 20px rgba(252, 240, 171, 0.3);
 }
+
+
+
 
 #contact {
     color: #FFF;
@@ -322,7 +381,6 @@ main h2 {
 
 form {
     text-align:center;
-    display:none;
 }
 
 form input {
@@ -342,4 +400,5 @@ footer {
     color: #AAA;
     text-align: center;
     padding: 5px;
+    margin-bottom: -25px;
 }

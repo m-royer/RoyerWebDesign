@@ -15,13 +15,21 @@
     <meta property="og:image" content="https://royerwebdesign.com/test/images/share.jpg" />
     <meta property="og:description" content="" />
     <title>Royer Web Design</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
+    <script src="https://kit.fontawesome.com/b6429507cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header role="banner" id="home">
         <h1>Royer Web Design</h1>
-        <div class="bg-cloud"></div>
+        <section class="titles">
+            <span>Designer</span>
+            <span>Developer</span>
+            <span><i class="fab fa-github"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-discord"></i> <i class="fas fa-envelope"></i></span>
+        </section>
+            <div class="cloud" id="cloud-back"></div>
+            <div class="cloud" id="cloud-mid"></div>
+            <div class="cloud" id="cloud-front"></div>
         <div class="sunrise">
             <div class="stripes">
                 <div class="glow">
@@ -38,7 +46,7 @@
         <ul>
             <li>Home</li>
             <li>My Work</li>
-            <li>Contact</li>
+            <li>Social Media </li>
         </ul>
     </nav>
     
@@ -72,6 +80,43 @@
     <footer role="contentinfo">
         &copy; 2019 Michael Royer
     </footer>
+
+    <!-- cloud box-shadow svg filter -->
+    <svg width="0" height="0"> 
+    <!--Top Layer-->
+        <filter id="filter-back">
+            <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
+                <animate attributeName="baseFrequency" dur="60s" values=".011;.02" repeatCount="indefinite">
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="120" />
+            
+        </filter>
+        <filter id="filter-mid">
+            <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
+                <animate attributeName="baseFrequency" dur="60s" values=".011;.02" repeatCount="indefinite">
+            </feTurbulence>
+            <feDisplacementMap  in="SourceGraphic" scale="120" />
+        </filter>
+        <filter id="filter-front">
+            <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="563">
+                <animate attributeName="baseFrequency" dur="60s" values=".009;.013" repeatCount="indefinite">
+            </feTurbulence>
+            <feDisplacementMap  in="SourceGraphic" scale="50" />
+        </filter>
+    </svg>
+
+    <script>
+        let cloudBack = document.getElementById("cloud-turb");
+        let num = cloudBack.getAttribute("baseFrequency");
+        /*
+        setInterval(function() {
+            num = parseFloat(num) + 0.00001;
+            cloudBack.setAttribute("baseFrequency",num);
+            console.log("num: " + num);
+        },50);
+        */
+    </script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46898928-3"></script>
     <script>
