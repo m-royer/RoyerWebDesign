@@ -15,21 +15,30 @@
     <meta property="og:image" content="https://royerwebdesign.com/test/images/share.jpg" />
     <meta property="og:description" content="" />
     <title>Royer Web Design</title>
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans:700" rel="stylesheet">
     <link rel="stylesheet" href="css/app.css">
     <script src="https://kit.fontawesome.com/b6429507cf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header role="banner" id="home">
-        <h1>Royer Web Design</h1>
-        <section class="titles">
-            <span>Designer</span>
-            <span>Developer</span>
-            <span><i class="fab fa-github"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-discord"></i> <i class="fas fa-envelope"></i></span>
-        </section>
+        <div class="text-layer">
+            <h1>Royer Web Design</h1>
+            <section class="titles">
+                <span>Designer / Developer</span>
+                <span>
+                    <a href="https://github.com/m-royer" alt="Github: m-royer" title="m-royer" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/michael-royer-09015371" alt="LinkedIn: Michael Royer" title="" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/scoobiefan" alt="Twitter: Scoobiefan" title="scoobiefan" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" alt="Discord: Scoobs#5596" title="Scoobs#5596"><i class="fab fa-discord"></i></a>
+                    <a href="#" alt="contact form coming soon" title="coming soon"><i class="fas fa-envelope"></i></a>
+                </span>
+            </section>
+        </div>
+        <div class="cloud-container">
             <div class="cloud" id="cloud-back"></div>
             <div class="cloud" id="cloud-mid"></div>
             <div class="cloud" id="cloud-front"></div>
+        </div>
         <div class="sunrise">
             <div class="stripes">
                 <div class="glow">
@@ -85,37 +94,26 @@
     <svg width="0" height="0"> 
     <!--Top Layer-->
         <filter id="filter-back">
-            <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
-                <animate attributeName="baseFrequency" dur="60s" values=".011;.02" repeatCount="indefinite">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
+                <animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
             </feTurbulence>
             <feDisplacementMap in="SourceGraphic" scale="120" />
-            
         </filter>
+
         <filter id="filter-mid">
             <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
-                <animate attributeName="baseFrequency" dur="60s" values=".011;.02" repeatCount="indefinite">
+                <animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
             </feTurbulence>
             <feDisplacementMap  in="SourceGraphic" scale="120" />
         </filter>
+
         <filter id="filter-front">
             <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="563">
-                <animate attributeName="baseFrequency" dur="60s" values=".009;.013" repeatCount="indefinite">
+                <animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
             </feTurbulence>
             <feDisplacementMap  in="SourceGraphic" scale="50" />
         </filter>
     </svg>
-
-    <script>
-        let cloudBack = document.getElementById("cloud-turb");
-        let num = cloudBack.getAttribute("baseFrequency");
-        /*
-        setInterval(function() {
-            num = parseFloat(num) + 0.00001;
-            cloudBack.setAttribute("baseFrequency",num);
-            console.log("num: " + num);
-        },50);
-        */
-    </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46898928-3"></script>
