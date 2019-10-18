@@ -250,7 +250,7 @@ header {
     width: 100vw;
     height: 100vw;
     margin-top: calc(100vh - 50vw - 70px);
-    background: url('../images/radial-stripes-light.png');
+    background: url('../images/radial-stripes-light-compressed.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -316,7 +316,7 @@ header {
 .sunrise .stripes .glow .flare .sun {
     width: 100%;
     height: 100%;
-    background-image: url('../images/flare.png');
+    background-image: url('../images/flare-compressed.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -328,7 +328,7 @@ header {
     bottom: 0;
     width: 100%;
     height: 110px;
-    background: url('../images/lawn.png');
+    background: url('../images/lawn-cropped-compressed.png');
     z-index: 50;
 }
 
@@ -394,7 +394,7 @@ main {
     display:none;
     background: #000;
     color: #FFF;
-    background: url('../images/earth.png');
+    background: none;/*url('../images/earth.png');*/
     padding-top: 50px;
     text-align: center;
     overflow: hidden;
@@ -418,7 +418,7 @@ main h2 {
     display:none;
     color: #FFF;
     height: 800px;
-    background: url('../images/prism.png');
+    background: none;/*url('../images/prism.png');*/
     border-top: solid 1px #AAA;
 }
 
