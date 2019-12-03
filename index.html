@@ -95,21 +95,21 @@
     <!--Top Layer-->
         <filter id="filter-back">
             <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
-                <animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+                <!-- animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
             </feTurbulence>
             <feDisplacementMap in="SourceGraphic" scale="120" />
         </filter>
 
         <filter id="filter-mid">
             <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="563">
-                <animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+                <!-- animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
             </feTurbulence>
             <feDisplacementMap  in="SourceGraphic" scale="120" />
         </filter>
 
         <filter id="filter-front">
             <feTurbulence id="cloud-turb" type="fractalNoise" baseFrequency="0.009" numOctaves="4" seed="563">
-                <animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+                <!-- animate attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
             </feTurbulence>
             <feDisplacementMap  in="SourceGraphic" scale="50" />
         </filter>

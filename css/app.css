@@ -180,12 +180,12 @@ header {
 
   @media (orientation: portrait) {
       .cloud-container {
-        
+        display:none;
       }
 
       .cloud {
           height: 300px;
-          animation: cloud-scroll 10s linear infinite alternate;
+          animation: none;/*cloud-scroll 10s linear infinite alternate;*/
       }
 
       @media (prefers-reduced-motion: reduced) {
