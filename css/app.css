@@ -175,23 +175,11 @@ header {
     transform: translate(-300px,-500px);
     z-index: 2;
     transition: box-shadow 0.5s ease;
-    animation: none;/* cloud-scroll 100s linear infinite alternate;*/
   }
 
   @media (orientation: portrait) {
       .cloud-container {
         display:none;
-      }
-
-      .cloud {
-          height: 300px;
-          animation: none;/*cloud-scroll 10s linear infinite alternate;*/
-      }
-
-      @media (prefers-reduced-motion: reduced) {
-          .cloud {
-              animation: none;
-          }
       }
   }
   
@@ -209,16 +197,6 @@ header {
     filter: url(#filter-front);
     box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
   }
-
-@keyframes cloud-scroll {
-    0% {
-        margin-left: 10vw;
-    }
-    100% {
-        margin-left: -10vw;
-    }
-}
-
 
 
 /* background */
