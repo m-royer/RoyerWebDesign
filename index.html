@@ -21,7 +21,7 @@
 </head>
 <body>
     <header role="banner" id="home">
-        <div class="text-layer">
+        <div class="text-layer show">
             <h1>Royer Web Design</h1>
             <section class="titles">
                 <span>Designer / Developer</span>
@@ -30,11 +30,11 @@
                     <a href="https://www.linkedin.com/in/michael-royer-09015371" alt="LinkedIn: Michael Royer" title="" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://twitter.com/scoobiefan" alt="Twitter: Scoobiefan" title="scoobiefan" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a href="#" alt="Discord: Scoobs#5596" title="Scoobs#5596"><i class="fab fa-discord"></i></a>
-                    <a href="#" alt="contact form coming soon" title="coming soon"><i class="fas fa-envelope"></i></a>
+                    <a href="#" id="show-contact" alt="Contact Me"><i class="fas fa-envelope"></i></a>
                 </span>
             </section>
         </div>
-        <div class="cloud-container">
+        <div class="cloud-container show">
             <div class="cloud" id="cloud-back"></div>
             <div class="cloud" id="cloud-mid"></div>
             <div class="cloud" id="cloud-front"></div>
@@ -50,45 +50,34 @@
         </div>
         <div class="grass"></div>
     </header>
-    
-    <nav role="navigation">
-        <ul>
-            <li>Home</li>
-            <li>My Work</li>
-            <li>Social Media </li>
-        </ul>
-    </nav>
-    
-    <main role="main" id="main">
-        <h2>My Work</h2>
-        <!--img src="images/under_construction.png"-->
-    </main>
 
-    <section role="form" id="contact">
-        <h2>Contact Me</h2>
-        <form action="contact.php" method="POST">
-            <div>
-                <label>Name:
-                    <input type="text">
-                </label>
+    <div class="contact-container">
+        <h3>Give me a shout!</h3>
+        <form class="contact-form" id="contact-form">
+            <div class="row">
+                <div>
+                    <input type="text" name="name" placeholder=" " required>
+                    <label for="name">Name</label>
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder=" " required>
+                    <label for="email">E-Mail</label>
+                </div>
             </div>
-            <div>
-                <label>Subject:
-                    <input type="text">
-                </label>
+            <div class="row">
+                <div>
+                    <textarea name="message" placeholder=" " required></textarea>
+                    <label for="message">Message</label>
+                </div>
             </div>
-            <div>
-                <textarea cols="25" rows="5"></textarea>
-            </div>
-            <div class="submit-button">
-                <input type="submit" value="Send" disabled>
+            <div class="row">
+                <div class="buttons">
+                    <a href="#" class="btn btn-cancel" id="contact-cancel"><i class="fas fa-comment-slash"></i> Cancel</a> 
+                    <a href="#" class="btn btn-submit" id="contact-submit"><i class="fas fa-paper-plane"></i> Submit</a>
+                </div>
             </div>
         </form>
-    </section>
-
-    <footer role="contentinfo">
-        &copy; 2019 Michael Royer
-    </footer>
+    </div>
 
     <!-- cloud box-shadow svg filter -->
     <svg width="0" height="0"> 
@@ -115,6 +104,7 @@
         </filter>
     </svg>
 
+    <script src="js/app.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46898928-3"></script>
     <script>
