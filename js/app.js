@@ -44,7 +44,8 @@ function submitContact() {
     contactRequest.send(data.join("&"));
 }
 
-
+/*
 showContactButton.addEventListener("click", changeScene);
 cancelContactButton.addEventListener("click", changeScene);
 submitContactButton.addEventListener("click", submitContact);
+*/

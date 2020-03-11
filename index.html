@@ -81,27 +81,46 @@
 
     <!-- cloud box-shadow svg filter -->
     <svg width="0" height="0"> 
-    <!--Top Layer-->
-        <filter id="filter-back">
-            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
-                <!-- animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" scale="120" />
-        </filter>
+    <!-- Animated -->
+    <filter id="filter-back">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+            <animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
 
-        <filter id="filter-mid">
-            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
-                <!-- animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" scale="120" />
-        </filter>
+    <filter id="filter-mid">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+            <animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
 
-        <filter id="filter-front">
-            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
-                <!-- animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite" -->
-            </feTurbulence>
-            <feDisplacementMap in="SourceGraphic" scale="120" />
-        </filter>
+    <filter id="filter-front">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+            <animate id="cloud-animate" attributeName="baseFrequency" dur="100s" values=".009;.02" repeatCount="indefinite">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
+
+    <!-- Non-Animated -->
+    <filter id="filter-back-noanimate">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
+
+    <filter id="filter-mid-noanimate">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
+
+    <filter id="filter-front-noanimate">
+        <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
+        </feTurbulence>
+        <feDisplacementMap in="SourceGraphic" scale="120" />
+    </filter>
     </svg>
 
     <script src="js/app.js"></script>

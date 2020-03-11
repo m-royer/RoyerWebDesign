@@ -198,19 +198,38 @@ header {
 }
 
 #cloud-back {
-filter: url(#filter-back);
-box-shadow: 300px 500px 30px -20px #fff;
+    filter: url(#filter-back);
+    box-shadow: 300px 500px 30px -20px #fff;
 }
 
 #cloud-mid {
-filter: url(#filter-mid);
-box-shadow: 300px 540px 70px -60px rgba(158, 168, 179, 0.5);
+    filter: url(#filter-mid);
+    box-shadow: 300px 540px 70px -60px rgba(158, 168, 179, 0.5);
 }
 
 #cloud-front {
-filter: url(#filter-front);
-box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
+    filter: url(#filter-front);
+    box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
 }
+
+/* No animation in Firefox until they can improve their animation rendering */
+@supports (-moz-appearance:none) {
+    #cloud-back {
+        filter: url(#filter-back-noanimate);
+        box-shadow: 300px 500px 30px -20px #fff;
+    }
+    
+    #cloud-mid {
+        filter: url(#filter-mid-noanimate);
+        box-shadow: 300px 540px 70px -60px rgba(158, 168, 179, 0.5);
+    }
+    
+    #cloud-front {
+        filter: url(#filter-front-noanimate);
+        box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
+    }
+}
+
 
 
 /* background */
