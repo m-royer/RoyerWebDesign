@@ -88,6 +88,10 @@ body {
   align-items: center;
 }
 
+.gap {
+  height: 500px;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -558,7 +562,7 @@ header {
 
 nav {
   position: sticky;
-  top: 4rem;
+  top: 2rem;
   z-index: 999;
   display: flex;
   align-items: center;
@@ -687,26 +691,24 @@ nav .nav_wrapper ul li:hover, nav .nav_wrapper ul li:active, nav .nav_wrapper ul
   align-items: center;
   flex-direction: column;
 }
-
-.title {
+.header-text .title {
   font-family: "Luckiest Guy", cursive;
   font-weight: 700;
   color: #FFF;
   text-align: center;
   text-shadow: 0 1px 0 #ebebeb, 0 2px 0 #d6d6d6, 0 3px 0 #c2c2c2, 0 4px 0 #adadad, 0 5px 0 #999999, 0 6px 0 #858585, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
-  font-size: 6vw;
-  line-height: 6vw;
+  font-size: 8rem;
+  line-height: 8rem;
 }
-.title > span {
-  font-size: 8vw;
+.header-text .title > span {
+  font-size: 9rem;
 }
-
-.title-sub-text {
+.header-text .title-sub-text {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   color: #444;
-  font-size: 2.6vw;
-  line-height: 3vw;
+  font-size: 3rem;
+  line-height: 4rem;
   margin-top: -1rem;
 }
 
@@ -857,28 +859,19 @@ main .header-double-cta .header-cta-box .cta-body .cta-body-cards > div {
 
 #section__development {
   text-align: center;
-  color: #FFF;
+  color: #222;
   position: relative;
   z-index: 2;
-  background: rgb(20, 50, 20);
-}
-#section__development #codebg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-#section__development .main-wrapper {
-  min-height: 50rem;
+  background: rgb(240, 240, 240);
+  padding: 1rem;
 }
 #section__development h2 {
   position: relative;
-  color: #dfdfdf;
+  color: #43474f;
   text-align: left;
   font-size: clamp(2.4rem, 5.9vw, 3.9rem);
   line-height: clamp(2rem, 7vw, 4rem);
   letter-spacing: -0.3rem;
-  margin-top: 5rem;
 }
 #section__development h2 > span {
   color: #9DE152;
@@ -1045,7 +1038,7 @@ main .header-double-cta .header-cta-box .cta-body .cta-body-cards > div {
   text-align: center;
   text-shadow: 0 1px 0 #ebebeb, 0 2px 0 #d6d6d6, 0 3px 0 #c2c2c2, 0 4px 0 #adadad, 0 5px 0 #999999, 0 6px 0 #858585, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
   font-size: 8rem;
-  margin-bottom: -5rem;
+  margin-bottom: -3rem;
 }
 .contact-heading > span {
   font-size: 9rem;
@@ -3512,15 +3505,15 @@ footer .watermelon-stripes {
   opacity: 0.2;
   z-index: 102;
 }
-footer .container {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  justify-content: center;
-  align-items: top;
+footer .title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.4rem;
 }
-footer .container div {
-  padding: 10px;
+footer .sub-title {
+  font-size: 1rem;
+  line-height: 1.2rem;
 }
 footer .copyright {
   display: flex;
