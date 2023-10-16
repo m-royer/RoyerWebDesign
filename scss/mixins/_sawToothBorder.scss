@@ -1,0 +1,25 @@
+@mixin saw-tooth-vertical($width: 12px, $bg: #fff) {
+    background-image:
+      /* Top jagged */
+      linear-gradient(135deg, $bg 50%, transparent 50%),
+      linear-gradient(225deg, $bg 50%, transparent 50%),
+      /* Bottom jagged */
+      linear-gradient(45deg, $bg 50%, transparent 50%),
+      linear-gradient(-45deg, $bg 50%, transparent 50%);
+    background-position:
+      /* Top jagged */
+      top left, top left,
+      /* Bottom jagged */
+      bottom left, bottom left;
+    background-size: $width $width;
+    background-repeat: repeat-x;
+  }
+
+@mixin saw-tooth-border($bg: #FFF) {
+    background-image:
+    linear-gradient(135deg, $bg 50%, transparent 50%),
+    linear-gradient(225deg, $bg 50%, transparent 50%);
+    background-position: top left, top left;
+    background-size: 12px 12px;
+    background-repeat: repeat-x;
+}

@@ -1,0 +1,62 @@
+@use 'z-indexes' as *;
+
+/*** ------------------------------ CLOUDS ------------------------------------- ***/
+
+.cloud-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: -300px;
+    z-index: $z-clouds;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .cloud {
+        width: 100%;
+        height: 400px;
+        border-radius: 40%;
+        position: absolute;
+        transform: translate(-300px,-200px);
+    }
+    
+    .cloud-image {
+        display: none;
+    }
+}
+
+
+
+#cloud-back {
+    filter: url(#filter-back);
+    box-shadow: 300px 500px 30px -20px #fff;
+}
+
+#cloud-mid {
+    filter: url(#filter-mid);
+    box-shadow: 300px 540px 70px -60px rgba(158, 168, 179, 0.5);
+}
+
+#cloud-front {
+    filter: url(#filter-front);
+    box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* No animation */
+#cloud-back-noanimate {
+    filter: url(#filter-back-noanimate);
+    box-shadow: 300px 500px 30px -20px #fff;
+}
+
+#cloud-mid-noanimate {
+    filter: url(#filter-mid-noanimate);
+    box-shadow: 300px 540px 70px -60px rgba(158, 168, 179, 0.5);
+}
+
+#cloud-front-noanimate {
+    filter: url(#filter-front-noanimate);
+    box-shadow: 300px 570px 60px -100px rgba(0, 0, 0, 0.3);
+}

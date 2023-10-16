@@ -1,0 +1,119 @@
+@use "sass:list";
+@use "sass:color";
+
+@mixin comic-header-font($color:#FFF) {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 700;
+    color: $color;
+    text-align: center;
+
+
+
+    $text-shadow-value: ();
+    @for $i from 1 through 6 {
+        $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
+        $text-shadow-value: append($text-shadow-value,$shadow-text,comma);
+    }
+
+    $text-shadow-value: append($text-shadow-value,0 6px 1px rgba(0,0,0,0.1), comma);
+    $text-shadow-value: append($text-shadow-value,0 0 5px rgba(0,0,0,.1),comma);
+
+    @for $i from 1 to 6 {
+        $y-offset: list.nth(1px 3px 5px 10px 20px,$i);
+        $blur: list.nth(3px 5px 10px 10px 20px,$i);
+        $alpha: list.nth(.3 .2 .25 .2 .15,$i);
+        $shadow-text: 0 $y-offset $blur rgba(0,0,0,$alpha);
+        $text-shadow-value: append($text-shadow-value,$shadow-text,comma);
+    }
+
+    text-shadow: $text-shadow-value;
+}
+
+@mixin comic-header-font-highlighted($color:#FFF) {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 700;
+    color: $color;
+    text-align: center;
+
+
+
+    $text-shadow-value: ();
+    @for $i from 1 through 6 {
+        $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
+        $text-shadow-value: append($text-shadow-value,$shadow-text,comma);
+    }
+
+    $text-shadow-value: append($text-shadow-value,0 6px 1px rgba(0,0,0,0.1), comma);
+    $text-shadow-value: append($text-shadow-value,0 0 5px rgba(0,0,0,.1),comma);
+
+    @for $i from 1 to 6 {
+        $y-offset: list.nth(1px 3px 5px 10px 20px,$i);
+        $blur: list.nth(3px 5px 10px 10px 20px,$i);
+        $alpha: list.nth(.3 .2 .25 .2 .15,$i);
+        $shadow-text: 0 $y-offset $blur rgba(0,0,0,$alpha);
+        $text-shadow-value: append($text-shadow-value,$shadow-text,comma);
+    }
+
+    $text-shadow-value: append($text-shadow-value,0 0 4rem rgb(250, 250, 165), comma);
+
+    text-shadow: $text-shadow-value;
+}
+
+/*  original:
+    0 1px 0 #ccc,
+    0 2px 0 #c9c9c9,
+    0 3px 0 #bbb,
+    0 4px 0 #b9b9b9,
+    0 5px 0 #aaa,
+
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+*/
+
+
+/*  computed:
+    0 1px 0 rgb(194, 194, 194), 
+    0 2px 0 rgb(184, 184, 184), 
+    0 3px 0 rgb(174, 174, 174), 
+    0 4px 0 rgb(164, 164, 164), 
+    0 5px 0 rgb(154, 154, 154), 
+    0 6px 0 rgb(144, 144, 144), 
+
+    0 6px 1px rgba(0, 0, 0, 0.1), 
+    0 0 5px rgba(0, 0, 0, 0.1), 
+    
+    0 1px 3px rgba(0, 0, 0, 0.3), 
+    0 3px 5px rgba(0, 0, 0, 0.2), 
+    0 5px 10px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.2), 
+    0 20px 20px rgba(0, 0, 0, 0.15);
+  */
+
+
+
+@mixin comic-box-shadow($color:#FFF) {
+    $box-shadow-value: ();
+    @for $i from 1 through 6 {
+        $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
+        $box-shadow-value: append($box-shadow-value,$shadow-text,comma);
+    }
+
+    $box-shadow-value: append($box-shadow-value,0 6px 1px rgba(0,0,0,0.1), comma);
+    $box-shadow-value: append($box-shadow-value,0 0 5px rgba(0,0,0,.1),comma);
+
+    @for $i from 1 to 6 {
+        $y-offset: list.nth(1px 3px 5px 10px 20px,$i);
+        $blur: list.nth(3px 5px 10px 10px 20px,$i);
+        $alpha: list.nth(.3 .2 .25 .2 .15,$i);
+        $shadow-text: 0 $y-offset $blur rgba(0,0,0,$alpha);
+        $box-shadow-value: append($box-shadow-value,$shadow-text,comma);
+    }
+
+    box-shadow: $box-shadow-value;
+}

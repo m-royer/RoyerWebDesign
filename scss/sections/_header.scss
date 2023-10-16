@@ -1,0 +1,184 @@
+@use '../mixins/comicFont' as *;
+@use '../utilities/z-indexes' as *;
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+nav {
+    position: sticky;
+    top: 4rem;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .nav_wrapper {
+        background: #000;
+        background: linear-gradient(to bottom, rgba(50,50,50,1) 0%,rgba(0,0,0,1) 50%,rgba(70,70,70,1) 100%); 
+        color: #FFF;
+        border-radius: 1rem;
+        margin: 1px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+        & ul {
+            list-style: none;
+            display: flex;
+
+            li {
+                color: #FFF;
+                font-size: 1.2rem;
+                padding: 1.5rem 1rem;
+                margin: 0 2px;
+                border-radius: 0.5rem;
+                cursor: pointer;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &:hover, &:active, &.active {
+                    background: #FFF;
+                    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 100%);
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+
+/*** ------------------------------ PRESENTATION ------------------------------------- ***/
+
+#presentation {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+
+    /* background */
+    & .sunrise {
+        overflow:hidden;
+        z-index: $z-sunrise;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        & .stripes {
+            width: 100vw;
+            height: 100vw;
+            margin-top: -50vw;
+            background: url('../images/radial-stripes-light-compressed.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            z-index: $z-stripes;
+            animation: rotate 200s linear infinite;
+
+            @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            & .glow {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background-image: 
+                    radial-gradient(
+                        circle closest-side,
+                        rgba(255, 253, 173, 0.6),
+                        transparent
+                    );
+                z-index: $z-glow;
+
+                & .flare {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 150px;
+                    height: 150px;
+                    background-image: 
+                        radial-gradient(
+                            circle closest-side,
+                            #FFFC61,
+                            transparent
+                        );
+                    z-index: $z-flare;
+
+                    & .sun {
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('../images/flare-compressed.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        z-index: $z-sun;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (orientation: portrait) {
+        .sunrise .stripes {
+            position: absolute;
+            top: 0;
+            width: 200vh;
+            height: 200vh;
+            margin-top: -100vh;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .sunrise .stripes {
+            animation: none;
+        }
+    }
+}
+
+/*** ------------------------------ TEXT ------------------------------------- ***/
+.header-text {
+    position: relative;
+    z-index: 150;
+    width: 100%;
+    margin-top: 9rem;
+    margin-bottom: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    @include comic-header-font;
+    font-size: 6vw;
+    line-height: 6vw;
+
+    & > span {
+        font-size: 8vw;
+    }
+}
+
+.title-sub-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #444;
+    font-size: 2.6vw;
+    line-height: 3vw;
+    margin-top: -1rem;
+}

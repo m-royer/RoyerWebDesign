@@ -1,0 +1,62 @@
+@use '../mixins/comicFont' as *;
+@use '../utilities/z-indexes' as *;
+
+footer {
+    width: 100%;
+    position: relative;
+    background:
+        linear-gradient(
+            to bottom, rgba(0, 0, 0, 0.2) 0px, 
+            rgba(0, 0, 0, 0) 10px
+        ), 
+        linear-gradient(
+            to bottom, 
+            #bf556f, 
+            #9b354e
+        );
+    ;
+    background-repeat: no-repeat;
+    border-top: solid 3px #FFF;
+    color: #FFF;
+    font-size: 0.8rem;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .watermelon-stripes {
+        position:absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        background: url('../images/radial-stripes-light-compressed.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: blur(10px);
+        opacity: 0.2;
+        z-index: $z-main + 2;
+    }
+
+    & .container {
+        width: 100%;
+        max-width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: top;
+
+        & div {
+            padding: 10px;
+        }
+    }
+
+    & .copyright{
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+}

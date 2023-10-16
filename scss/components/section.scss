@@ -1,0 +1,52 @@
+@use '../utilities/z-indexes' as *;
+
+
+.section__wrapper {
+    position: relative;
+    z-index: $z-main;
+
+    /* any kind of blurred gradients */
+    & .section__background{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 4rem;
+    }
+
+    /* inset transparent border */
+    & .section__border {
+        position: relative;
+        border-radius: 10px;
+        border: solid 1px rgba(0,0,0,0.1);
+        margin: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px, rgba(255, 255, 255, 0.4) 0px 0px 15px 0px inset;
+
+        /* content wrapper */
+        & .section__box-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            border-radius: 7px;
+            overflow: hidden;
+            background: #FFF;
+
+            & .section__box-bottom {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100px;
+                height: 100px;
+                background-image: url('../images/line_art.svg');
+                background-repeat: no-repeat;
+                background-position: bottom right;
+                background-size: contain;
+                height: 10rem;
+            }
+        }
+    }
+}

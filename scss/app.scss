@@ -1,0 +1,17 @@
+@use 'reset';
+@use 'utilities/util';
+@use 'utilities/clouds';
+@use 'components/section';
+@use 'sections/header';
+@use 'sections/main';
+@use 'sections/design-develop';
+@use 'sections/responsive';
+@use 'sections/work';
+@use 'sections/pricing';
+@use 'sections/contact';
+@use 'devices';
+@use 'sections/footer';
+
+.hide {
+    display: none;
+}

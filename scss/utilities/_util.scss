@@ -1,0 +1,65 @@
+$z-main: 100;
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    & > div {
+    flex-basis: 100%;
+    flex: 1;
+    margin: 5px;
+    }
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+
+
+/* margin classes */
+
+@for $i from 1 through 20 {
+    .mt-#{$i} {
+        margin-top: $i * 10px;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $i * 10px;
+    }
+
+    .m-#{$i} {
+        margin: $i * 10px;
+    }
+}
+
+/* padding classes */
+
+@for $i from 1 through 5 {
+    .pt-#{$i} {
+        padding-top: $i * 10px;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $i * 10px;
+    }
+
+    .p-#{$i} {
+        padding: $i * 10px;
+    }
+}
