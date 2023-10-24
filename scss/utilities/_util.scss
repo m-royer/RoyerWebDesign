@@ -7,33 +7,43 @@ $z-main: 100;
     height: 500px;
 }
 
+.anchor {
+    position: absolute;
+    top: -7rem;
+}
 
 
 
 
 
+.flex {
+    display: flex;
+}
 
 .flex-center {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.row {
-    display: flex;
+.flex-row {
     flex-direction: row;
-
-    & > div {
-    flex-basis: 100%;
-    flex: 1;
-    margin: 5px;
-    }
 }
 
-.col {
-    display: flex;
+.flex-col {
     flex-direction: column;
 }
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+
+
+
 
 .text-center {
     text-align: center;
@@ -47,32 +57,54 @@ $z-main: 100;
 
 /* margin classes */
 
-@for $i from 1 through 20 {
-    .mt-#{$i} {
-        margin-top: $i * 10px;
-    }
-
-    .mb-#{$i} {
-        margin-bottom: $i * 10px;
-    }
-
+@for $i from 0 through 10 {
     .m-#{$i} {
-        margin: $i * 10px;
+        margin: $i * 1rem;
     }
 }
 
+@for $i from 0 through 10 {
+    .mt-#{$i} {
+        margin-top: $i * 1rem;
+    }
+}
+
+@for $i from 0 through 10 {
+    .mb-#{$i} {
+        margin-bottom: $i * 1rem;
+    }
+}
+
+
+
 /* padding classes */
 
-@for $i from 1 through 5 {
-    .pt-#{$i} {
-        padding-top: $i * 10px;
-    }
+.p-05 {
+    padding: 0.5rem;
+}
 
-    .pb-#{$i} {
-        padding-bottom: $i * 10px;
-    }
-
+@for $i from 0 through 5 {
     .p-#{$i} {
-        padding: $i * 10px;
+        padding: $i * 1rem;
+    }
+}
+
+.pt-05 {
+    padding-top: 0.5rem;
+}
+
+@for $i from 0 through 5 {
+    .pt-#{$i} {
+        padding-top: $i * 1rem;
+    }
+}
+
+.pb-05 {
+    padding-bottom: 0.5rem;
+}
+
+@for $i from 0 through 5 {
+    .pb-#{$i} {
+        padding-bottom: $i * 1rem;
     }
 }
