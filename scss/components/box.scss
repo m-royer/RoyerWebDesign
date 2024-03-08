@@ -1,11 +1,28 @@
 @use '../mixins/comicFont' as *;
+@use '../utilities/z-indexes.scss' as *;
+
+.box-wrapper {
+    position: relative;
+    z-index: $z-box;
+    width: 100%;
+    max-width: 1440px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.box-border {
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px rgba(0,0,0,0.1);
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px, rgba(255, 255, 255, 0.6) 0px 0px 15px 0px inset;
+}
 
 .box {
     background: #FFF;
     color: #444;
     width: 100%;
-    border-radius: 10px;
-    @include comic-box-shadow;
+    border-radius: 5px;
     text-align: left;
     overflow: hidden;
 }
@@ -15,7 +32,7 @@
     color: #444;
     letter-spacing: -1px;
     font-family: 'Inter', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 900;
     padding: 1rem;
     padding-bottom: 0.5rem;
@@ -27,4 +44,48 @@
     height: 20px;
     display:flex;
     align-items: flex-end;
+}
+
+.design-box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    
+    & .placeholder {
+        background: #DDD;
+
+        & img {
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    & .placeholder2 {
+        width: 80%;
+        padding: 0 0.5rem 10rem;
+
+        & .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            background: #D2E8BA;
+
+            & > h3 {
+                padding: 0.5rem 0.5rem 0 0.5rem;
+            }
+
+            & > svg {
+                width: 100%;
+            }
+        }
+
+        & p {
+            line-height: 1.4;
+        }
+    }
+
+    & h3 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+    }
 }

@@ -1,6 +1,15 @@
 @use '../mixins/comicFont' as *;
 @use '../utilities/z-indexes' as *;
 
+.cloud-transition-top {
+    width: 100%;
+    margin-bottom: -3px;
+}
+
+.cloud-transition-bottom {
+    width: 100%;
+}
+
 #section__work {
     width: 100%;
     max-width: none;

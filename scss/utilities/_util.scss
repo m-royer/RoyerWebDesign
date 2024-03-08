@@ -12,6 +12,16 @@ $z-main: 100;
     top: -7rem;
 }
 
+.tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #444;
+    font-size: 2vw;
+    margin-top: -1rem;
+    text-shadow: 0 -1px 3px rgba(255,255,255,0.3);
+}
+
 
 
 
@@ -25,6 +35,10 @@ $z-main: 100;
     align-items: center;
 }
 
+.flex-top {
+    align-items: flex-start;
+}
+
 .flex-row {
     flex-direction: row;
 }
@@ -35,6 +49,10 @@ $z-main: 100;
 
 .flex-grow {
     flex-grow: 1;
+}
+
+.flex-half {
+    width: 50%;
 }
 
 .flex-space-between {
@@ -61,17 +79,26 @@ $z-main: 100;
     .m-#{$i} {
         margin: $i * 1rem;
     }
+    .mn-#{$i} {
+        margin: $i * -1rem;
+    }
 }
 
 @for $i from 0 through 10 {
     .mt-#{$i} {
         margin-top: $i * 1rem;
     }
+    .mtn-#{$i} {
+        margin-top: $i * -1rem;
+    }
 }
 
 @for $i from 0 through 10 {
     .mb-#{$i} {
         margin-bottom: $i * 1rem;
+    }
+    .mbn-#{$i} {
+        margin-bottom: $i * -1rem;
     }
 }
 
@@ -93,7 +120,7 @@ $z-main: 100;
     padding-top: 0.5rem;
 }
 
-@for $i from 0 through 5 {
+@for $i from 0 through 10 {
     .pt-#{$i} {
         padding-top: $i * 1rem;
     }
@@ -103,7 +130,7 @@ $z-main: 100;
     padding-bottom: 0.5rem;
 }
 
-@for $i from 0 through 5 {
+@for $i from 0 through 10 {
     .pb-#{$i} {
         padding-bottom: $i * 1rem;
     }

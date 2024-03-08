@@ -4,7 +4,7 @@
 
 #section__design {
     padding: 1rem;
-    margin-top: 6rem;
+    margin-top: 15rem;
     position: relative;
 
     & h2 {
@@ -16,60 +16,6 @@
             font-size: 7rem;
         }
     }
-
-    & .tagline {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        text-align: center;
-        color: #444;
-        font-size: 2vw;
-        margin-top: -1rem;
-        text-shadow: 0 -1px 3px rgba(255,255,255,0.3);
-    }
-
-    .design-box {
-        display: flex;
-        flex-direction: row;
-        padding: 1rem;
-        
-        & .placeholder {
-            background: #DDD;
-
-            & img {
-                height: 100%;
-                width: auto;
-            }
-        }
-
-        & .placeholder2 {
-            width: 80%;
-            padding: 0 0.5rem 10rem;
-
-            & .title-wrapper {
-                display: flex;
-                flex-direction: column;
-                background: #D2E8BA;
-
-                & > h3 {
-                    padding: 0.5rem 0.5rem 0 0.5rem;
-                }
-
-                & > svg {
-                    width: 100%;
-                }
-            }
-
-            & p {
-                line-height: 1.4;
-            }
-        }
-
-        & h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 3rem;
-        }
-    }
 }
 
 
@@ -77,6 +23,7 @@
 #section__development {
     padding: 1rem;
     position: relative;
+    margin-top: 15rem;
 
     h2 {
         @include comic-header-font-highlighted();
@@ -86,15 +33,5 @@
         & > span {
             font-size: 6.5rem;
         }
-    }
-
-    & .tagline {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        text-align: center;
-        color: #444;
-        font-size: 2vw;
-        margin-top: -1rem;
-        text-shadow: 0 -1px 3px rgba(255,255,255,0.3);
     }
 }
