@@ -1,6 +1,4 @@
-$z-main: 100;
-
-
+@use '../utilities/vars' as *;
 
 
 .gap {
@@ -20,6 +18,10 @@ $z-main: 100;
     font-size: 2vw;
     margin-top: -1rem;
     text-shadow: 0 -1px 3px rgba(255,255,255,0.3);
+}
+
+.full-width {
+    width: 100%;
 }
 
 

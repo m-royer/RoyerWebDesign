@@ -1,5 +1,5 @@
 @use '../mixins/comicFont' as *;
-@use '../utilities/z-indexes' as *;
+@use '../utilities/vars' as *;
 
 header {
     position: relative;

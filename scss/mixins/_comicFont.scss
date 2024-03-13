@@ -29,6 +29,26 @@
     text-shadow: $text-shadow-value;
 }
 
+@mixin comic-header-font-no-shadow($color:#FFF) {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 700;
+    color: $color;
+    text-align: center;
+
+
+
+    $text-shadow-value: ();
+    @for $i from 1 through 6 {
+        $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
+        $text-shadow-value: append($text-shadow-value,$shadow-text,comma);
+    }
+
+    $text-shadow-value: append($text-shadow-value,0 6px 1px rgba(0,0,0,0.1), comma);
+    $text-shadow-value: append($text-shadow-value,0 0 5px rgba(0,0,0,.1),comma);
+
+    text-shadow: $text-shadow-value;
+}
+
 @mixin comic-header-font-highlighted($color:#FFF) {
     font-family: 'Luckiest Guy', cursive;
     font-weight: 700;
@@ -97,7 +117,7 @@
 
 
 
-@mixin comic-box-shadow($color:#FFF) {
+  @mixin comic-box-shadow($color:#FFF) {
     $box-shadow-value: ();
     @for $i from 1 through 6 {
         $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
@@ -114,6 +134,19 @@
         $shadow-text: 0 $y-offset $blur rgba(0,0,0,$alpha);
         $box-shadow-value: append($box-shadow-value,$shadow-text,comma);
     }
+
+    box-shadow: $box-shadow-value;
+}
+
+@mixin comic-box-no-shadow($color:#FFF) {
+    $box-shadow-value: ();
+    @for $i from 1 through 6 {
+        $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);
+        $box-shadow-value: append($box-shadow-value,$shadow-text,comma);
+    }
+
+    $box-shadow-value: append($box-shadow-value,0 6px 1px rgba(0,0,0,0.1), comma);
+    $box-shadow-value: append($box-shadow-value,0 0 5px rgba(0,0,0,.1),comma);
 
     box-shadow: $box-shadow-value;
 }

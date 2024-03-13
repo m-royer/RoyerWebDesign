@@ -1,5 +1,5 @@
 @use '../mixins/comicFont' as *;
-@use '../utilities/z-indexes.scss' as *;
+@use '../utilities/vars' as *;
 
 .box-wrapper {
     position: relative;
@@ -8,6 +8,15 @@
     max-width: 1440px;
     margin: 10px;
     border-radius: 10px;
+}
+
+.box-blur {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
 }
 
 .box-border {
@@ -24,11 +33,26 @@
     width: 100%;
     border-radius: 5px;
     text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.box-comic {
+    @include comic-box-shadow();
+    background: #FFF;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.box-comic-no-shadow {
+    @include comic-box-no-shadow();
+    background: #FFF;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .box-title {
-    background: #D2E8BA;
+    background: $flat-green;
     color: #444;
     letter-spacing: -1px;
     font-family: 'Inter', sans-serif;
@@ -40,52 +64,16 @@
 }
 
 .box-divider {
-    background: #D2E8BA;
+    background: $flat-green;
     height: 20px;
     display:flex;
     align-items: flex-end;
 }
 
-.design-box {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    
-    & .placeholder {
-        background: #DDD;
-
-        & img {
-            height: 100%;
-            width: auto;
-        }
-    }
-
-    & .placeholder2 {
-        width: 80%;
-        padding: 0 0.5rem 10rem;
-
-        & .title-wrapper {
-            display: flex;
-            flex-direction: column;
-            background: #D2E8BA;
-
-            & > h3 {
-                padding: 0.5rem 0.5rem 0 0.5rem;
-            }
-
-            & > svg {
-                width: 100%;
-            }
-        }
-
-        & p {
-            line-height: 1.4;
-        }
-    }
-
-    & h3 {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 3rem;
-    }
+.box-flat-shadow {
+    border-radius: 5px;
+    overflow:hidden;
+    background: #FFF;
+    border: solid 1px #dfdfdf;
+    box-shadow: 0 0 40px rgba(0,0,20,0.1);
 }
