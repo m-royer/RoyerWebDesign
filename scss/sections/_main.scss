@@ -34,6 +34,50 @@ main {
     }
 }
 
+.pricing__checklist {
+    padding: 0.5rem;
+    background: #FFF;
+    border: solid 1px #dfdfdf;
+    border-radius: 10px;
+    list-style-type: none;
+    box-shadow: 0 0 20px rgba(100,100,120,0.2);
+
+    & li {
+        background-image: url('../images/checkmark.svg');
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+}
+
+.pricing__box-bg {
+    background: linear-gradient(#FFF 0%, hsl(89deg, 58%, 95%) 100%);
+}
+
+.pricing__box-brown-bg {
+    background: linear-gradient(#FFF 0%, hsl(30, 50%, 95%) 100%);
+}
+
+.pricing__box-purple-bg {
+    background: linear-gradient(#FFF 0%, hsl(227, 50%, 95%) 100%);
+}
+
+.pricing__brown-bg {
+    background: #E8D1BA;
+}
+
+.pricing__brown-color {
+    color: #E8D1BA;
+}
+
+.pricing__purple-bg {
+    background: #BAC4E8;
+}
+
+.pricing__purple-color {
+    color: #BAC4E8;
+}
+
 .decoration__pricing-wrapper {
     position: relative;
     background: color.scale($flat-green, $lightness: 70%);
@@ -50,14 +94,11 @@ main {
 }
 
 .decoration__circle {
-    width: 400px;
-    height: 400px;
-    background: $flat-green;
-    border-radius: 50%;
     position: absolute;
-    right: -150px;
-    bottom: -200px;
-    box-shadow: 0 0 500px color.scale($flat-green, $lightness: -10%);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    background: #FFF;
+    border: solid 10px #b4d590;
 }
 
 .decoration__circle-reversed {

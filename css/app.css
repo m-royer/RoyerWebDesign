@@ -62,7 +62,7 @@ h1 {
 h2, h3, h4 {
   font-family: "Inter", sans-serif;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 2rem;
   letter-spacing: 1px;
 }
 
@@ -287,6 +287,7 @@ body {
 
 .box-divider {
   background: hsl(89deg, 50%, 82%);
+  color: hsl(89deg, 50%, 82%);
   height: 20px;
   display: flex;
   align-items: flex-end;
@@ -489,6 +490,49 @@ main {
   font-size: 7rem;
 }
 
+.pricing__checklist {
+  padding: 0.5rem;
+  background: #FFF;
+  border: solid 1px #dfdfdf;
+  border-radius: 10px;
+  list-style-type: none;
+  box-shadow: 0 0 20px rgba(100, 100, 120, 0.2);
+}
+.pricing__checklist li {
+  background-image: url("../images/checkmark.svg");
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.pricing__box-bg {
+  background: linear-gradient(#FFF 0%, hsl(89deg, 58%, 95%) 100%);
+}
+
+.pricing__box-brown-bg {
+  background: linear-gradient(#FFF 0%, hsl(30deg, 50%, 95%) 100%);
+}
+
+.pricing__box-purple-bg {
+  background: linear-gradient(#FFF 0%, hsl(227deg, 50%, 95%) 100%);
+}
+
+.pricing__brown-bg {
+  background: #E8D1BA;
+}
+
+.pricing__brown-color {
+  color: #E8D1BA;
+}
+
+.pricing__purple-bg {
+  background: #BAC4E8;
+}
+
+.pricing__purple-color {
+  color: #BAC4E8;
+}
+
 .decoration__pricing-wrapper {
   position: relative;
   background: #f1f8ea;
@@ -505,14 +549,11 @@ main {
 }
 
 .decoration__circle {
-  width: 400px;
-  height: 400px;
-  background: hsl(89deg, 50%, 82%);
-  border-radius: 50%;
   position: absolute;
-  right: -150px;
-  bottom: -200px;
-  box-shadow: 0 0 500px #bdde9b;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  background: #FFF;
+  border: solid 10px #b4d590;
 }
 
 .decoration__circle-reversed {
@@ -757,6 +798,10 @@ footer .copyright {
   width: 100%;
 }
 
+.container-relative {
+  position: relative;
+}
+
 .flex {
   display: flex;
 }
@@ -796,6 +841,10 @@ footer .copyright {
 
 .text-left {
   text-align: left;
+}
+
+.text-green {
+  color: hsl(89deg, 77%, 28%);
 }
 
 /* margin classes */
@@ -1186,6 +1235,14 @@ footer .copyright {
 
 .pb-10 {
   padding-bottom: 10rem;
+}
+
+.flat-green {
+  background: hsl(89deg, 50%, 82%);
+}
+
+.hidden {
+  display: none;
 }
 
 .hide {

@@ -24,6 +24,10 @@
     width: 100%;
 }
 
+.container-relative {
+    position: relative;
+}
+
 
 
 
@@ -71,6 +75,10 @@
 
 .text-left {
     text-align: left;
+}
+
+.text-green {
+    color: $dark-green;
 }
 
 
@@ -136,4 +144,16 @@
     .pb-#{$i} {
         padding-bottom: $i * 1rem;
     }
+}
+
+
+
+
+
+.flat-green {
+    background: $flat-green;
+}
+
+.hidden {
+    display: none;
 }
