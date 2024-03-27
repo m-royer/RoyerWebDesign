@@ -26,12 +26,23 @@ main {
 .headline {
     @include comic-header-font-highlighted();
     text-align: center;
-    font-size: 5.5rem;
-    margin-bottom: -3.5rem;
+    font-size: clamp(3rem,12vw,5.5rem);
+    line-height: 0.7;
+    margin-bottom: -1.7rem;
 
     & > span {
-        font-size: 7rem;
+        font-size: clamp(4rem,15vw,7rem);
     }
+}
+
+.pricing__title {
+    font-size: clamp(1rem, 4vw, 2rem);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.pricing__subtitle {
+    min-height: 4rem;
 }
 
 .pricing__checklist {
@@ -41,12 +52,13 @@ main {
     border-radius: 10px;
     list-style-type: none;
     box-shadow: 0 0 20px rgba(100,100,120,0.2);
+    margin-top: 1rem;
 
     & li {
         background-image: url('../images/checkmark.svg');
         background-repeat: no-repeat;
         padding-left: 20px;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
 }
 
@@ -78,19 +90,52 @@ main {
     color: #BAC4E8;
 }
 
+.pricing__bold {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.pricing__price {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 800;
+    color: $dark-green;
+}
+
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    appearance: none;
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 800;
+    background: #4C7A15;
+    box-shadow: 0px 5px 0 0 #37580d;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    &:hover {
+        background: #5a8f1a;
+        box-shadow: 0px 5px 0 0 #37580d;
+    }
+
+    &:active {
+        margin-top: 5px;
+        margin-bottom: -5px;
+        background: #70a82b;
+        box-shadow: none;
+    }
+}
+
+
+
 .decoration__pricing-wrapper {
     position: relative;
     background: color.scale($flat-green, $lightness: 70%);
-}
-
-.decoration__pricing-blob {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    aspect-ratio: 1/1;
-    background: $flat-green;
-    border-radius:50px;
-    transform:rotate(45deg);
 }
 
 .decoration__circle {

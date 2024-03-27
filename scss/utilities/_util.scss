@@ -1,15 +1,5 @@
 @use '../utilities/vars' as *;
 
-
-.gap {
-    height: 500px;
-}
-
-.anchor {
-    position: absolute;
-    top: -7rem;
-}
-
 .tagline {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -18,14 +8,6 @@
     font-size: 2vw;
     margin-top: -1rem;
     text-shadow: 0 -1px 3px rgba(255,255,255,0.3);
-}
-
-.full-width {
-    width: 100%;
-}
-
-.container-relative {
-    position: relative;
 }
 
 
@@ -116,11 +98,11 @@
 
 /* padding classes */
 
-.p-05 {
-    padding: 0.5rem;
-}
+@for $i from 0 through 10 {
+    .p-#{$i}5 {
+        padding: ($i * 1rem) + 0.5rem;
+    }
 
-@for $i from 0 through 5 {
     .p-#{$i} {
         padding: $i * 1rem;
     }
@@ -131,16 +113,20 @@
 }
 
 @for $i from 0 through 10 {
+    .pt-#{$i}5 {
+        padding-top: ($i * 1rem) + 0.5rem;
+    }
+
     .pt-#{$i} {
         padding-top: $i * 1rem;
     }
 }
 
-.pb-05 {
-    padding-bottom: 0.5rem;
-}
-
 @for $i from 0 through 10 {
+    .pb-#{$i}5 {
+        padding-bottom: ($i * 1rem) + 0.5rem;;
+    }
+
     .pb-#{$i} {
         padding-bottom: $i * 1rem;
     }
@@ -150,8 +136,69 @@
 
 
 
-.flat-green {
+
+
+
+
+
+
+
+@media screen and (max-width: $breakpoint) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex-sm-row {
+        flex-direction: row;
+    }
+
+    .flex-half {
+        width: 100%;
+    }
+
+    .mobile-square {
+        aspect-ratio: 1/1;
+    }
+    
+}
+
+
+.gap {
+    height: 500px;
+}
+
+hr {
+    border-bottom: solid 2px hsl(87, 93.8%, 12.5%);
+    width: 80%;
+}
+
+.anchor {
+    position: absolute;
+    top: -7rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.container-relative {
+    position: relative;
+}
+
+.flat-green-bg {
     background: $flat-green;
+}
+
+.light-green-bg {
+    background: $light-green;
+}
+
+.layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .hidden {
