@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+    v2.0 | 20110126
+    License: none (public domain)
 */
 html {
     overflow-x: hidden;
@@ -31,10 +31,15 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-    line-height: 1.1;
-    box-sizing: border-box;
+    background: #84C044;
+    background-image: url('../images/bg.png');
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    color: #444;
+    box-shadow: 0 0px 50px 0 inset rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 blockquote, q {
@@ -62,7 +67,7 @@ h2,h3,h4 {
     letter-spacing: 1px;
 }
 p {
-    font-size: 1.1rem;
+    font-size: min(4.5vw,1.1rem)
 }
 img {
     max-width: 100%;
@@ -79,16 +84,4 @@ em {
 }
 strong {
     font-weight: 600;
-}
-
-body {
-    background: #84C044;
-    background-image: url('../images/bg.png');
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    color: #444;
-    box-shadow: 0 0px 50px 0 inset rgba(0,0,0,0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }

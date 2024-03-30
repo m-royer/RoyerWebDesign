@@ -22,20 +22,20 @@
     <script src="https://kit.fontawesome.com/38c1fc1524.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a id="top"></a>
+    
     <nav>
         <div class="nav_wrapper">
             <a id="menuToggle" class="mobile_menu"><i class="fa-solid fa-bars"></i> MENU</a>
             <ul id="menuItems">
-                <li class="active"><a href="#top"><i class="fa-solid fa-house"></i> HOME</a></li>
-                <li><a href="#design">DESIGNS</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li class="active" data-section="section__home"><a href="#top"><i class="fa-solid fa-house"></i> HOME</a></li>
+                <li data-section="section__design"><a href="#design">DESIGNS</a></li>
+                <li data-section="section__portfolio"><a href="#portfolio">PORTFOLIO</a></li>
+                <li data-section="section__pricing"><a href="#pricing">PRICING</a></li>
+                <li data-section="section__contact"><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     </nav>
-    <section role="banner" id="presentation">
+    <div id="presentation">
         
         <!-- Background -->
         <div class="sunrise">
@@ -48,7 +48,7 @@
             </div>
         </div>
         <!-- End Background -->
-    </section>
+    </div>
 
     <div class="header-text">
         <h1 class="title"><span>R</span>oyer <span>W</span>eb <span>D</span>esign</h1>
@@ -57,8 +57,7 @@
 
 
 <main>
-
-    <div class="flex flex-space-between mb-10" style="max-width: 1000px;">
+    <div class="flex flex-space-between mb-5" style="max-width: 1000px;">
         <div class="box-comic m-1">
             <div class="box-title text-center">
                 <h3>BUSINESS</h3>
@@ -101,119 +100,117 @@
 
 
 
+    <section class="section__home">
+        <a id="top" class="pt-8"></a>
+        <h2 class="headline"><span>L</span>ocal to <span>O</span>regon</h2>
+        <div class="box-wrapper mb-5">
+            <div class="box-border box-blur">
+                <div class="box flex">
 
-    <h2 class="headline"><span>L</span>ocal to <span>O</span>regon</h2>
-    <div class="box-wrapper mb-5">
-        <div class="box-blur"></div>
-        <div class="box-border">
-            <div class="box flex">
-
-                <div class="flex flex-half flex-center map-wrapper container-relative mobile-square" style="background-image: url('images/26709352083_2f437a6a7f_o.jpg'); background-size: cover;">
-                    <div class="layer" style="background: rgba(0,0,0,0.3);"></div>
-                    <div class="layer flex flex-center">
-                        <img src="images/oregon.svg" id="oregon-map" alt="Beautiful image of the Gorge by Mitchell Friedman">
-                    </div>
-                </div>
-
-                <div class="flex flex-col flex-half pricing__box-bg">
-                    <!-- style="background: hsl(89, 50%, 95%);" -->
-                    <div class="pb-2 flat-green-bg"></div>
-                    <div class="box-divider full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-
-                    <div class="pt-4"></div>
-                    <div class="flex flex-center p-1 pb-05">
-                        <h2 style="text-align: center; width: 15ch; font-size: 3rem; color: hsl(87, 93.8%, 12.5%);">Serving the Wilamette Valley</h2>
-                    </div>
-                    <hr>
-                    <div class="p-1 pt-05 text-center">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet est bibendum sem auctor maximus at id justo. Etiam ut molestie risus. Donec vitae cursus lorem. Suspendisse ut nisi libero. Maecenas malesuada tortor semper mauris fringilla commodo. Cras vestibulum nec libero nec iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sem erat, posuere id hendrerit quis, commodo nec libero.</p>
-                    </div>
-                    <div class="pb-4"></div>
-
-                    <div class="box-divider-bottom full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="transparent"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="pt-2 flat-green-bg"></div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-    <a id="design" class="pt-7"></a>
-    <h2 class="headline"><span>G</span>reat <span>D</span>esign</h2>
-    <div class="box-wrapper mb-1">
-        <div class="box-blur"></div>
-        <div class="box-border">
-            <div class="box flex sm-flex-reverse">
-                <div class="flex flex-half flex-col pricing__box-bg">
-                    <div class="pb-2 flat-green-bg"></div>
-                    <div class="box-divider full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="flex-grow flex flex-center flex-col">
-                        <div class="flex flex-center p-1 pb-05 ">
-                            <h2 style="text-align: center; font-size: 3rem; color: hsl(87, 93.8%, 12.5%);">Design That Works</h2>
-                        </div>
-                        <hr>
-                        <div class="text-center p-1 pt-05">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sit amet est bibendum sem auctor maximus at id justo. Etiam ut molestie risus. Donec vitae cursus lorem. Suspendisse ut nisi libero. Maecenas malesuada tortor semper mauris fringilla commodo. Cras vestibulum nec libero nec iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sem erat, posuere id hendrerit quis, commodo nec libero.</p>
+                    <div class="flex flex-half flex-center map-wrapper container-relative mobile-square" style="background-image: url('images/26709352083_2f437a6a7f_o.jpg'); background-size: cover;">
+                        <div class="layer" style="background: rgba(0,0,0,0.3);"></div>
+                        <div class="layer flex flex-center">
+                            <img src="images/oregon.svg" id="oregon-map" alt="Beautiful image of the Gorge by Mitchell Friedman">
                         </div>
                     </div>
 
-                    <div class="box-divider-bottom full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="hsl(89, 50%, 95%)"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                    <div class="flex flex-col flex-half flex-grow pricing__box-bg mobile-square">
+                        <div class="pb-2 flat-green-bg"></div>
+                        <div class="box-divider full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+
+                        <div class="p-1 pt-5 pb-5 flex flex-grow flex-col flex-center">
+                            <div class="flex flex-center pb-05">
+                                <h2 class="section-headline" style="max-width: 16ch;">SERVING THE WILLAMETTE VALLEY</h2>
+                            </div>
+                            <hr />
+                            <div class="p-1 flex flex-center">
+                                <p style="max-width: 50ch; line-height: 1.4;">
+                                From Portland to Eugene, if you're looking for the perfect website or web app, you've come to the right place. 
+                                Starting with a few questions over email, a face-to-face consultation is then arranged to get the clearest picture 
+                                for the solutions I can offer, the process for getting your website off the ground could not be easier.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="box-divider-bottom full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="transparent"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="pt-2 flat-green-bg"></div>
                     </div>
-                    <div class="pt-2 flat-green-bg"></div>
-                </div>
-                <div class="flex flex-half flex-center p-1 flat-green-bg">
-                    <img src="images/puter.jpg">
+
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="box-wrapper mb-10">
-        <div class="box-blur"></div>
-        <div class="box-border">
-            <div class="box flex" style="overflow:visible;">
-                <div class="flex flex-half flex-center p-1 pt-10 pb-10 container-relative" style="background: linear-gradient(90deg, rgba(210,232,186,1) 0%, rgba(255,255,255,1) 50%, rgba(210,232,186,1) 100%);">
-                    <div>
-                        <img src="images/rocket_jet_transparent.png" style="position: absolute; top: -50px; left: 115px; transform: scale(0.2);">
-                        <img src="images/arrow.svg" style="position: absolute; top: -90px; left: 50px; transform: scale(0.5);">
-                    </div>
-                    <img src="images/arrow.svg" style="position: absolute; top: -50px; left: 150px; transform: scale(0.4);">
-                    <img src="images/arrow.svg" style="position: absolute; top: -20px; transform: translateX(120px) scale(0.3);">
-                    <div>
-                        <img src="images/rocket_jet_transparent.png" style="position: absolute; top: -100px; transform: translateX(-35px) scale(0.4);">
-                        <img src="images/arrow.svg" style="position: absolute; top: -200px; transform: translateX(-100px);">
-                    </div>
-                    <div>
-                        <img src="images/rocket_jet_transparent.png" style="position: absolute; top: -80px; transform: translateX(115px) scale(0.2);">
-                        <img src="images/arrow.svg" style="position: absolute; top: -100px; transform: translateX(50px) scale(0.5);">
-                    </div>
-                    
 
-                    <div class="cloud-container" style="position: absolute; margin-top: -500px; height: 200px;">
-                        <div class="cloud" style="height: 300px;" id="cloud-back-noanimate"></div>
-                        <div class="cloud" style="height: 300px;" id="cloud-mid-noanimate"></div>
-                        <div class="cloud hidden" id="cloud-front-noanimate"></div>
-                        <div class="cloud-image">
-                            <img src="images/clouds/static-cloud.png" alt="">
+
+    <a id="design" class="pt-8"></a>
+    <section class="section__design">
+        <h2 class="headline"><span>G</span>reat <span>D</span>esign</h2>
+        <div class="box-wrapper mb-1">
+            <div class="box-border box-blur">
+                <div class="box flex sm-flex-reverse">
+                    <div class="flex flex-half flex-col pricing__box-bg">
+
+                        <div class="pb-2 flat-green-bg"></div>
+                        <div class="box-divider full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+
+                        <div class="p-1 pt-5 pb-5 flex-grow flex flex-col flex-center">
+                            <div class="flex pb-05">
+                                <h2 class="section-headline">DESIGN THAT WORKS</h2>
+                            </div>
+                            <hr />
+                            <div class="p-1 flex flex-center">
+                                <p style="max-width: 50ch; line-height: 1.4;">
+                                Something cool about design. Pictures are worth, like, at least 1,000 words.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="box-divider-bottom full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="hsl(89, 50%, 95%)"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="pt-2 flat-green-bg"></div>
+
+                    </div>
+                    <div class="flex flex-half mobile-square flex-center flat-green-bg" style="background: url('images/puter.jpg'); background-size: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-wrapper mb-10">
+            <div class="box-border box-blur">
+                <div class="box flex" style="overflow:visible;">
+                    <div class="flex flex-half flex-center p-1 pt-10 pb-10 container-relative" style="background: linear-gradient(90deg, rgba(210,232,186,1) 0%, rgba(255,255,255,1) 50%, rgba(210,232,186,1) 100%);">
+                        <div class="rocket_wrapper" style="top:-5rem;">
+                            <img src="images/rocket_jet_transparent.png">
+                            <img src="images/arrow.svg">
+                        </div>
+                        
+
+                        <div class="cloud-container" style="position: absolute; margin-top: -500px; height: 200px;">
+                            <div class="cloud" style="height: 300px;" id="cloud-back-noanimate"></div>
+                            <div class="cloud" style="height: 300px;" id="cloud-mid-noanimate"></div>
+                            <div class="cloud hidden" id="cloud-front-noanimate"></div>
+                            <div class="cloud-image">
+                                <img src="images/clouds/static-cloud.png" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-col flex-grow flex-center p-2 flat-green-bg">
-                    <h2 style="font-size: 2.5rem; color: hsl(87, 93.8%, 12.5%); line-height: 1.3;">Elevate Your Web Presence</h2>
-                    <p>Take your website to the next level by getting a new website today.</p>
+                    <div class="flex flex-col flex-grow flex-center p-2 flat-green-bg">
+                        <h2 class="section-headline">ELEVATE YOUR WEB PRESENCE</h2>
+                        <p>Take your website to the next level by getting a new website today.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
@@ -229,8 +226,8 @@
 
 
 
-    <div class="portfolio">
-        <a class="pb-6" id="portfolio"></a>
+    <section class="section__portfolio">
+        <a class="pt-8" id="portfolio"></a>
         <div class="box-wrapper">
             <h2>Selected Works</h2>
             <p>Some works of mine</p>
@@ -277,7 +274,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
@@ -295,202 +292,205 @@
 
 
 
-    <a id="pricing" class="pt-7"></a>
-    <h2 class="headline"><span>P</span>ricing Plans</h2>
-    <div class="flex box-wrapper">
+    <a id="pricing" class="pt-8"></a>
+    <section class="section__pricing">
+        <h2 class="headline"><span>P</span>ricing Plans</h2>
+        <div class="flex box-wrapper">
 
-        <!-- No Hassle -->
-        <div class="box-wrapper p-1 pt-0">
-            <div class="box-blur"></div>
-            <div class="box-border">
-                <div class="box flex flex-col pricing__box-bg">
-                    <div class="p-1 pb-0 box-title text-center">
-                        <h2 style="font-size: 2rem;">NO HASSLE</h2>
-                    </div>
-                    <div class="box-divider">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="p-2 pt-0 pb-5">
-                        <h3 class="pricing__title">Hands-Off Approach</h3>
-                        <div class="mb-1 pricing__subtitle">
-                            <p>Great for new businesses and those looking for new websites. Updates are as easy as sending an email.</p>
+            <!-- No Hassle -->
+            <div class="box-wrapper m-05 mt-0">
+                <div class="box-border box-blur">
+                    <div class="box flex flex-col pricing__box-bg">
+                        <div class="p-1 pb-0 box-title text-center">
+                            <h2 style="font-size: 2rem;">NO HASSLE</h2>
                         </div>
-                        <p class="pricing__bold">Flat Fee</p>
-                        <p class="pricing__price">$150/Mo</p>
-                        <ul class="pricing__checklist">
-                            <li>No Money Down</li>
-                            <li>Up and Running Fast</li>
-                            <li>Unlimited Updates</li>
-                            <li>Yearly Billing</li>
-                            <li>SEO Optimized</li>
-                        </ul>
+                        <div class="box-divider">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="p-2 pt-0 pb-5">
+                            <h3 class="pricing__title">Hands-Off Approach</h3>
+                            <div class="mb-1 pricing__subtitle">
+                                <p>Great for new businesses and those looking for new websites. Updates are as easy as sending an email.</p>
+                            </div>
+                            <p class="pricing__bold">Flat Fee</p>
+                            <p class="pricing__price">$150/Mo</p>
+                            <ul class="pricing__checklist">
+                                <li>No Money Down</li>
+                                <li>Up and Running Fast</li>
+                                <li>Unlimited Updates</li>
+                                <li>Yearly Billing</li>
+                                <li>SEO Optimized</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard -->
+            <div class="box-wrapper m-05 mt-0">
+                <div class="box-border box-blur">
+                    <div class="box flex flex-col pricing__box-brown-bg"">
+                        <div class="p-1 pb-0 box-title pricing__brown-bg text-center">
+                            <h2 style="font-size: 2rem;">STANDARD</h2>
+                        </div>
+                        <div class="box-divider pricing__brown-bg pricing__brown-color">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="p-2 pt-0 pb-5">
+                            <h3 class="pricing__title">I Build Your Website</h3>
+                            <div class="mb-1 pricing__subtitle">
+                                <p>For those who want more control over their website. Built in WordPress by me, total ownership for you.</p>
+                            </div>
+                            <p class="pricing__bold">Starting At</p>
+                            <p class="pricing__price">$5,000</p>
+                            <ul class="pricing__checklist">
+                                <li>You own everything</li>
+                                <li>Maintenance is available</li>
+                                <li>WCAG AA compliant</li>
+                                <li>Five</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom -->
+            <div class="box-wrapper m-05 mt-0">
+                <div class="box-border box-blur">
+                    <div class="box flex flex-col">
+                        <div class="p-1 pb-0 box-title pricing__purple-bg text-center">
+                            <h2 style="font-size: 2rem;">CUSTOM</h2>
+                        </div>
+                        <div class="box-divider pricing__purple-bg pricing__purple-color">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="p-2 pt-0 pb-5">
+                            <h3 class="pricing__title">Web Applications</h3>
+                            <div class="mb-1 pricing__subtitle">
+                                <p>Custom Laravel Web Applications made with React. For businesses looking to make an online service.</p>
+                            </div>
+                            <p class="pricing__bold pb-1 pt-1">Contact For Pricing</p>
+                            <ul class="pricing__checklist">
+                                <li>Automate Your Business</li>
+                                <li>Games</li>
+                                <li>Custom Applications</li>
+                                <li>Four</li>
+                                <li>Five</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Standard -->
-        <div class="box-wrapper p-1 pt-0">
-            <div class="box-blur"></div>
-            <div class="box-border">
-                <div class="box flex flex-col pricing__box-brown-bg"">
-                    <div class="p-1 pb-0 box-title pricing__brown-bg text-center">
-                        <h2 style="font-size: 2rem;">STANDARD</h2>
+        <div class="box-wrapper mb-5 mt-2">
+            <div class="box-border box-blur">
+                <div class="box flex">
+                    <div class="flex flex-half flex-center p-1 mobile-square" style="background:url('images/macbook_open_to_wordpress.jpg'); background-size: cover;">
+                        &nbsp;
                     </div>
-                    <div class="box-divider pricing__brown-bg pricing__brown-color">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="p-2 pt-0 pb-5">
-                        <h3 class="pricing__title">I Build Your Website</h3>
-                        <div class="mb-1 pricing__subtitle">
-                            <p>For those who want more control over their website. Built in WordPress by me, total ownership for you.</p>
+
+                    <div class="flex flex-col flex-half pricing__box-bg">
+                        <div class="pb-2 flat-green-bg"></div>
+                        <div class="box-divider full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
                         </div>
-                        <p class="pricing__bold">Starting At</p>
-                        <p class="pricing__price">$2,000</p>
-                        <ul class="pricing__checklist">
-                            <li>You own everything</li>
-                            <li>Maintenance is available</li>
-                            <li>WCAG AA compliant</li>
-                            <li>Five</li>
-                        </ul>
+
+                        <div class="p-1 pt-5 pb-5 flex flex-col flex-grow flex-center">
+                            <div class="flex flex-center pb-05">
+                                <h2 class="section-headline" style="max-width: 16ch;">ONGOING MAINTENANCE</h2>
+                            </div>
+                            <hr />
+                            <div class="p-1 flex flex-center">
+                                <p style="max-width: 50ch; line-height: 1.4;">
+                                    Included with the No Hassle plan, regular maintenance is performed monthly, and updates 
+                                    to the website are done as-needed when you want. Other plans are billed hourly on an 
+                                    as-needed basis or through a monthly plan.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="box-divider-bottom full-width">
+                            <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="hsl(89, 50%, 95%)"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+                        </div>
+                        <div class="pt-2 flat-green-bg"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Custom -->
-        <div class="box-wrapper p-1 pt-0">
-            <div class="box-blur"></div>
-            <div class="box-border">
-                <div class="box flex flex-col">
-                    <div class="p-1 pb-0 box-title pricing__purple-bg text-center">
-                        <h2 style="font-size: 2rem;">CUSTOM</h2>
+
+
+
+    <a id="contact" class="pt-8"></a>
+    <section class="section__contact">
+        <h2 class="headline"><span>C</span>ontact</h2>
+        <div class="box-wrapper">
+            <div class="box-border box-blur">
+                <div class="box flex flex-col flex-center">
+                    <div class="decoration__contact-stripes"></div>
+                    <div class="p-1" style="width: 100%; max-width: 700px;">
+                        <h3>Let's Chat</h3>
+                        <p>Use the form below to get more information about how to .</p>
+                        <p class="required">* = Required</p>
+                        <form action="" method="POST" class="pt-2">
+                            <div class="flex full-width">
+                                <div class="flex-half">
+                                    <label for="name">Name<span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="name" />
+                                    </div>
+                                </div>
+                                <div class="form-space flex-half">
+                                    <label for="org-name">Organization Name</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="org-name" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex full-width">
+                                <div class="flex-half">
+                                    <label for="email">E-Mail<span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="email" id="email" placeholder="you@mail.com" />
+                                    </div>
+                                </div>
+                                <div class="form-space flex-half">
+                                    <label for="url">Website URL</label>
+                                    <div class="input-wrapper">
+                                        <span class="prefix">https://</span><input type="url" id="url" placeholder="example.com" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="full-width">
+                                    <input type="checkbox" id="no-hassle" name="no-hassle" value="yes" />
+                                    <label for="no-hassle">I'm interested in the No Hassle plan</label>
+                            </div>
+
+                            <div class="flex full-width">
+                                <div class="pt-1 pb-1 full-width">
+                                    <label for="issue">How can I help you?<span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <textarea id="issue" rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pb-1">
+                                <button class="btn">
+                                    Submit <i class="fa-solid fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="box-divider pricing__purple-bg pricing__purple-color">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="p-2 pt-0 pb-5">
-                        <h3 class="pricing__title">Web Applications</h3>
-                        <div class="mb-1 pricing__subtitle">
-                            <p>Custom Laravel Web Applications made with React. For businesses looking to make an online service.</p>
-                        </div>
-                        <p class="pricing__bold pb-1 pt-1">Contact For Pricing</p>
-                        <ul class="pricing__checklist">
-                            <li>Automate Your Business</li>
-                            <li>Games</li>
-                            <li>Custom Applications</li>
-                            <li>Four</li>
-                            <li>Five</li>
-                        </ul>
-                    </div>
+                    <div class="decoration__contact-stripes"></div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="box-wrapper mb-5">
-        <div class="box-blur"></div>
-        <div class="box-border">
-            <div class="box flex">
-                <div class="flex flex-half flex-center p-1 mobile-square" style="background:url('images/macbook_open_to_wordpress.jpg'); background-size: cover;">
-                    &nbsp;
-                </div>
-
-                <div class="flex flex-col flex-half pricing__box-bg">
-                    <div class="pb-2 flat-green-bg"></div>
-                    <div class="box-divider full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="currentColor"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="#FFF" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-
-                    <div class="pt-4"></div>
-                    <div class="flex flex-center p-1 pb-05">
-                        <h2 style="text-align: center; font-size: 3rem; color: hsl(87, 93.8%, 12.5%);">Ongoing Maintenance</h2>
-                    </div>
-                    <hr>
-                    <div class="p-1 pt-05 text-center">
-                        <p>Included with the No Hassle plan, regular maintenance is performed monthly, and updates to the website are done as-needed when you want. Other plans are billed hourly on an as-needed basis or through a monthly plan.</p>
-                    </div>
-                    <div class="pb-4"></div>
-
-                    <div class="box-divider-bottom full-width">
-                        <svg id="visual" viewBox="0 0 450 20" width="100%" preserveAspectRatio="none" style="margin-bottom:-2px;" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="450" height="20" fill="hsl(89, 50%, 95%)"></rect><path d="M0 7L10.7 7C21.3 7 42.7 7 64.2 7.8C85.7 8.7 107.3 10.3 128.8 10.7C150.3 11 171.7 10 193 9C214.3 8 235.7 7 257 7.7C278.3 8.3 299.7 10.7 321.2 11C342.7 11.3 364.3 9.7 385.8 9.2C407.3 8.7 428.7 9.3 439.3 9.7L450 10L450 21L439.3 21C428.7 21 407.3 21 385.8 21C364.3 21 342.7 21 321.2 21C299.7 21 278.3 21 257 21C235.7 21 214.3 21 193 21C171.7 21 150.3 21 128.8 21C107.3 21 85.7 21 64.2 21C42.7 21 21.3 21 10.7 21L0 21Z" fill="currentColor" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
-                    </div>
-                    <div class="pt-2 flat-green-bg"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <a id="contact" class="pt-7"></a>
-    <h2 class="headline"><span>C</span>ontact</h2>
-    <div class="box-wrapper">
-        <div class="box-blur"></div>
-        <div class="box-border">
-            <div class="box flex flex-col flex-center">
-                <div class="decoration__contact-stripes"></div>
-                <div class="p-1" style="width: 100%; max-width: 700px;">
-                    <h3>Let's Chat</h3>
-                    <p>Use the form below to get more information about how to .</p>
-                    <p class="required">* = Required</p>
-                    <form action="" method="POST" class="pt-2">
-                        <div class="flex full-width">
-                            <div class="flex-half">
-                                <label for="name">Name<span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <input type="text" id="name" />
-                                </div>
-                            </div>
-                            <div class="form-space flex-half">
-                                <label for="org-name">Organization Name</label>
-                                <div class="input-wrapper">
-                                    <input type="text" id="org-name" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex full-width">
-                            <div class="flex-half">
-                                <label for="email">E-Mail<span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <input type="email" id="email" placeholder="you@mail.com" />
-                                </div>
-                            </div>
-                            <div class="form-space flex-half">
-                                <label for="url">Website URL</label>
-                                <div class="input-wrapper">
-                                    <span class="prefix">https://</span><input type="url" id="url" placeholder="example.com" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="full-width">
-                                <input type="checkbox" id="no-hassle" name="no-hassle" value="yes" />
-                                <label for="no-hassle">I'm interested in the No Hassle plan</label>
-                        </div>
-
-                        <div class="flex full-width">
-                            <div class="pt-1 pb-1 full-width">
-                                <label for="issue">How can I help you?<span class="required">*</span></label>
-                                <div class="input-wrapper">
-                                    <textarea id="issue" rows="10"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="pb-1">
-                            <button class="btn">
-                                Submit <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="decoration__contact-stripes"></div>
-            </div>
-        </div>
-    </div>
+    </section>
 </main>
 
 

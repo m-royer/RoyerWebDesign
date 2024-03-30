@@ -7,6 +7,10 @@
     color: $color;
     text-align: center;
 
+    @supports (-webkit-appearance:none) {
+        letter-spacing: 2px;
+    }
+
 
 
     $text-shadow-value: ();
@@ -35,6 +39,11 @@
     color: $color;
     text-align: center;
 
+    /*  chrome you bastard  */
+    @supports (-webkit-appearance:none) {
+        letter-spacing: 3px;
+    }
+
 
 
     $text-shadow-value: ();
@@ -54,6 +63,11 @@
     font-weight: 700;
     color: $color;
     text-align: center;
+
+    /*  chrome you bastard  */
+    @supports (-webkit-appearance:none) {
+        letter-spacing: 3px;
+    }
 
 
 
@@ -117,7 +131,7 @@
 
 
 
-  @mixin comic-box-shadow($color:#FFF) {
+@mixin comic-box-shadow($color:#FFF) {
     $box-shadow-value: ();
     @for $i from 1 through 6 {
         $shadow-text: 0 ($i+px) 0 color.scale($color, $saturation: -15%*$i, $lightness: -8%*$i);

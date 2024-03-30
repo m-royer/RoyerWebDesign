@@ -9,12 +9,14 @@ header {
 nav {
     position: sticky;
     top: 2rem;
-    z-index: 999;
+    z-index: $z-nav;
     display: flex;
     align-items: center;
     justify-content: center;
 
     .nav_wrapper {
+        position: relative;
+        z-index: $z-nav + 1;
         background: #000;
         background: linear-gradient(to bottom, rgba(50,50,50,1) 0%,rgba(0,0,0,1) 50%,rgba(70,70,70,1) 100%); 
         color: #FFF;
@@ -64,22 +66,33 @@ nav {
 @media screen and (max-width: $breakpoint) {
     nav {
         width: 90%;
+        z-index: $z-nav + 1;
 
         .nav_wrapper {
             width: 100%;
             position: relative;
+            z-index: unset;
 
             .mobile_menu {
                 display: block;
+                position: relative;
+                z-index: $z-nav + 1;
                 cursor: pointer;
             }
         
             ul {
-                left: 0;
-                top: 0;
-                display:none;
-                margin-top: 2rem;
-                width: 100%;
+                display:block;
+                position: absolute;
+                top: 2rem;
+                left: 10px;
+                z-index: -1;
+                padding-top: 2rem;
+                border-radius: 0 0 1rem 1rem;
+                width: calc(100% - 20px);
+                background: #000;
+                transform: scaleY(0);    
+                transform-origin: top;
+                transition: transform 300ms ease;
 
                 li {
 
@@ -98,6 +111,7 @@ nav {
 
             ul.open {
                 display: block;
+                transform: scaleY(1);
             }
         }
 
@@ -106,10 +120,11 @@ nav {
 
 @keyframes openMenu {
     from {
-        transform: scaleY(0);
+        height: 0;
+        
     }
     to {
-        transform: scaleY(1);
+        height: auto;
     }
 }
 
@@ -198,7 +213,6 @@ nav {
 @media (orientation: portrait) {
     #presentation {
         height: 150vh;
-        outline: solid 1px #F00;
 
         & .sunrise .stripes {
             position: absolute;
@@ -219,7 +233,7 @@ nav {
 /*** ------------------------------ TEXT ------------------------------------- ***/
 .header-text {
     position: relative;
-    z-index: 150;
+    z-index: $z-header-text;
     width: 100%;
     margin-top: 9rem;
     margin-bottom: 9rem;
@@ -230,11 +244,11 @@ nav {
 
     & .title {
         @include comic-header-font;
-        font-size: 8rem;
-        line-height: 8rem;
+        font-size: min(25vw,8rem);
+        line-height: min(22vw,7rem);
 
         & > span {
-            font-size: 9rem;
+            font-size: min(30vw,10rem);
         }
     }
 
@@ -243,8 +257,8 @@ nav {
         font-family: 'Inter', sans-serif;
         font-weight: 700;
         color: #444;
-        font-size: 3rem;
-        line-height: 4rem;
+        font-size: min(15vw,3rem);
+        line-height: min(12vw,4rem);
         margin-top: -1rem;
     }
 }

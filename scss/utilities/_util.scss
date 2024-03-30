@@ -152,6 +152,10 @@
         flex-direction: row;
     }
 
+    .sm-flex-reverse {
+        flex-direction: column-reverse;
+    }
+
     .flex-half {
         width: 100%;
     }
@@ -170,11 +174,6 @@
 hr {
     border-bottom: solid 2px hsl(87, 93.8%, 12.5%);
     width: 80%;
-}
-
-.anchor {
-    position: absolute;
-    top: -7rem;
 }
 
 .full-width {

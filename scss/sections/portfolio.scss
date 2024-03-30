@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.portfolio {
+.section__portfolio {
     width: 100%;
     padding: 1rem;
     padding-bottom: 5rem;
@@ -83,7 +83,7 @@
 }
 
 @media screen and (max-width: $breakpoint) {
-    .portfolio .portfolio__wrapper {
+    .section__portfolio .portfolio__wrapper {
         grid-template-columns: 1fr;
     }
 }

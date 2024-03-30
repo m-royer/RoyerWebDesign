@@ -1,6 +1,6 @@
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+    v2.0 | 20110126
+    License: none (public domain)
 */
 html {
   overflow-x: hidden;
@@ -34,10 +34,15 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-  line-height: 1.1;
-  box-sizing: border-box;
+  background: #84C044;
+  background-image: url("../images/bg.png");
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  color: #444;
+  box-shadow: 0 0px 50px 0 inset rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 blockquote, q {
@@ -67,7 +72,7 @@ h2, h3, h4 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: min(4.5vw, 1.1rem);
 }
 
 img {
@@ -89,18 +94,6 @@ em {
 
 strong {
   font-weight: 600;
-}
-
-body {
-  background: #84C044;
-  background-image: url("../images/bg.png");
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  color: #444;
-  box-shadow: 0 0px 50px 0 inset rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /*** ------------------------------ CLOUDS ------------------------------------- ***/
@@ -245,11 +238,6 @@ body {
 }
 
 .box-blur {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   backdrop-filter: blur(2px);
 }
 
@@ -330,12 +318,14 @@ header {
 nav {
   position: sticky;
   top: 2rem;
-  z-index: 999;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 nav .nav_wrapper {
+  position: relative;
+  z-index: 201;
   background: #000;
   background: linear-gradient(to bottom, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 50%, rgb(70, 70, 70) 100%);
   color: #FFF;
@@ -374,21 +364,32 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
 @media screen and (max-width: 900px) {
   nav {
     width: 90%;
+    z-index: 201;
   }
   nav .nav_wrapper {
     width: 100%;
     position: relative;
+    z-index: unset;
   }
   nav .nav_wrapper .mobile_menu {
     display: block;
+    position: relative;
+    z-index: 201;
     cursor: pointer;
   }
   nav .nav_wrapper ul {
-    left: 0;
-    top: 0;
-    display: none;
-    margin-top: 2rem;
-    width: 100%;
+    display: block;
+    position: absolute;
+    top: 2rem;
+    left: 10px;
+    z-index: -1;
+    padding-top: 2rem;
+    border-radius: 0 0 1rem 1rem;
+    width: calc(100% - 20px);
+    background: #000;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 300ms ease;
   }
   nav .nav_wrapper ul li a {
     width: 100%;
@@ -401,14 +402,15 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
   }
   nav .nav_wrapper ul.open {
     display: block;
+    transform: scaleY(1);
   }
 }
 @keyframes openMenu {
   from {
-    transform: scaleY(0);
+    height: 0;
   }
   to {
-    transform: scaleY(1);
+    height: auto;
   }
 }
 /*** ------------------------------ PRESENTATION ------------------------------------- ***/
@@ -478,7 +480,6 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
 @media (orientation: portrait) {
   #presentation {
     height: 150vh;
-    outline: solid 1px #F00;
   }
   #presentation .sunrise .stripes {
     position: absolute;
@@ -496,7 +497,7 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
 /*** ------------------------------ TEXT ------------------------------------- ***/
 .header-text {
   position: relative;
-  z-index: 150;
+  z-index: 40;
   width: 100%;
   margin-top: 9rem;
   margin-bottom: 9rem;
@@ -511,25 +512,37 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
   color: #FFF;
   text-align: center;
   text-shadow: 0 1px 0 #ebebeb, 0 2px 0 #d6d6d6, 0 3px 0 #c2c2c2, 0 4px 0 #adadad, 0 5px 0 #999999, 0 6px 0 #858585, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
-  font-size: 8rem;
-  line-height: 8rem;
+  font-size: min(25vw, 8rem);
+  line-height: min(22vw, 7rem);
+}
+@supports (-webkit-appearance: none) {
+  .header-text .title {
+    letter-spacing: 2px;
+  }
 }
 .header-text .title > span {
-  font-size: 9rem;
+  font-size: min(30vw, 10rem);
 }
 .header-text .title-sub-text {
   text-align: center;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   color: #444;
-  font-size: 3rem;
-  line-height: 4rem;
+  font-size: min(15vw, 3rem);
+  line-height: min(12vw, 4rem);
   margin-top: -1rem;
 }
 
 main {
   position: relative;
   z-index: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -550,14 +563,40 @@ main {
   font-weight: 700;
   color: #FFF;
   text-align: center;
+  /*  chrome you bastard  */
   text-shadow: 0 1px 0 #ebebeb, 0 2px 0 #d6d6d6, 0 3px 0 #c2c2c2, 0 4px 0 #adadad, 0 5px 0 #999999, 0 6px 0 #858585, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15), 0 0 4rem rgb(250, 250, 165);
   text-align: center;
-  font-size: clamp(3rem, 12vw, 5.5rem);
+  font-size: clamp(4.5rem, 9vw, 8rem);
   line-height: 0.7;
-  margin-bottom: -1.7rem;
+  margin-bottom: max(-4vw, -2.5rem);
+}
+@supports (-webkit-appearance: none) {
+  .headline {
+    letter-spacing: 3px;
+  }
 }
 .headline > span {
-  font-size: clamp(4rem, 15vw, 7rem);
+  font-size: clamp(6rem, 11vw, 10rem);
+}
+
+.section-headline {
+  text-align: center;
+  font-size: min(11vw, 2.4rem);
+  color: hsl(87deg, 93.8%, 12.5%);
+}
+
+.rocket_wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rocket_wrapper img {
+  display: block;
+}
+.rocket_wrapper img:last-of-type {
+  margin-top: -20rem;
 }
 
 .pricing__title {
@@ -690,7 +729,7 @@ main {
   width: 100%;
 }
 
-.portfolio {
+.section__portfolio {
   width: 100%;
   padding: 1rem;
   padding-bottom: 5rem;
@@ -703,20 +742,20 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.portfolio h2 {
+.section__portfolio h2 {
   font-size: clamp(3rem, 12vw, 5.5rem);
   line-height: 1.1;
   color: #444;
   text-align: left;
 }
-.portfolio .portfolio__wrapper {
+.section__portfolio .portfolio__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
   row-gap: 2rem;
   margin-top: 2rem;
 }
-.portfolio .portfolio__item {
+.section__portfolio .portfolio__item {
   background: #FFF;
   border-radius: 10px;
   border: solid 1px #DDD;
@@ -724,10 +763,10 @@ main {
   display: flex;
   flex-direction: column;
 }
-.portfolio .portfolio__item img {
+.section__portfolio .portfolio__item img {
   border-radius: 10px 10px 0 0;
 }
-.portfolio .portfolio__title {
+.section__portfolio .portfolio__title {
   position: absolute;
   left: -15px;
   top: -15px;
@@ -740,22 +779,22 @@ main {
   border-radius: 5px;
   flex-grow: 1;
 }
-.portfolio .portfolio__description {
+.section__portfolio .portfolio__description {
   background: #EEE;
   padding: 10px;
   width: 100%;
   flex-grow: 1;
 }
-.portfolio .portfolio__description p {
+.section__portfolio .portfolio__description p {
   width: calc(100% - 10rem);
 }
-.portfolio .portfolio__description .portfolio__button {
+.section__portfolio .portfolio__description .portfolio__button {
   width: 10rem;
   align-self: center;
 }
 
 @media screen and (max-width: 900px) {
-  .portfolio .portfolio__wrapper {
+  .section__portfolio .portfolio__wrapper {
     grid-template-columns: 1fr;
   }
 }
@@ -1459,6 +1498,9 @@ footer .copyright {
   .flex-sm-row {
     flex-direction: row;
   }
+  .sm-flex-reverse {
+    flex-direction: column-reverse;
+  }
   .flex-half {
     width: 100%;
   }
@@ -1473,11 +1515,6 @@ footer .copyright {
 hr {
   border-bottom: solid 2px hsl(87deg, 93.8%, 12.5%);
   width: 80%;
-}
-
-.anchor {
-  position: absolute;
-  top: -7rem;
 }
 
 .full-width {
