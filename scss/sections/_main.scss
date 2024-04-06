@@ -33,12 +33,12 @@ section {
 .headline {
     @include comic-header-font-highlighted();
     text-align: center;
-    font-size: clamp(4.5rem,9vw,8rem);
+    font-size: clamp(4.5rem,9vw,7rem);
     line-height: 0.7; // for multi-line titles
     margin-bottom: max(-4vw,-2.5rem);
 
     & > span {
-        font-size: clamp(6rem,11vw,10rem);
+        font-size: clamp(6rem,11vw,9rem);
     }
 }
 
@@ -49,7 +49,7 @@ section {
 }
 
 .rocket_wrapper {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,13 +59,19 @@ section {
         display: block;
     }
 
-    & img:first-of-type {
-        
+    & .arrow {
+        z-index: $z-box + 2;
     }
 
-    & img:last-of-type {
-        margin-top: -20rem;
+    & .jet {
+        margin-top: -10rem;
+        transform: scale(0.5);
+        z-index: $z-box + 1;
     }
+}
+
+.cloud-container {
+    z-index: $z-box + 5;
 }
 
 .pricing__title {
@@ -74,8 +80,8 @@ section {
     line-height: 1.4;
 }
 
-.pricing__subtitle {
-    min-height: 4rem;
+.pricing__description {
+    min-height: 7rem;
 }
 
 .pricing__checklist {
@@ -92,6 +98,14 @@ section {
         background-repeat: no-repeat;
         padding-left: 20px;
         margin-bottom: 12px;
+
+        & a {
+            color: #505C86;
+        }
+
+        & a:hover {
+            color: #142352;
+        }
     }
 }
 
