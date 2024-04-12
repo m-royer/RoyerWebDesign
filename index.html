@@ -192,31 +192,36 @@
             <div class="box-border box-blur">
                 <div class="box flex" style="overflow:visible;">
                     <div class="flex flex-half flex-center p-1 pt-10 pb-10 container-relative" style="background: linear-gradient(90deg, rgba(210,232,186,1) 0%, rgba(255,255,255,1) 50%, rgba(210,232,186,1) 100%);">
+                        <div style="position: absolute; bottom: 0; width: 100%; height: 20%; background: linear-gradient(to bottom, rgba(218,232,186,0) 0%,rgba(218,232,186,1) 100%);"></div>
                         <div class="rocket_wrapper" style="top:-10rem;">
                             <img src="images/arrow.svg" class="arrow" alt="" />
                             <img src="images/rocket_jet_transparent.png" class="jet" alt="" />
                         </div>
 
                         <!-- Left side -->
-                        <div class="rocket_wrapper" style="top:-7rem; transform: scale(0.3); margin-left: -20rem;">
+                        <div class="rocket_wrapper" style="top:-7rem; transform: scale(0.3) translateX(-21rem)">
+                            <img src="images/arrow.svg" class="arrow" alt="" />
+                            <img src="images/rocket_jet_transparent.png" class="jet" alt="" />
+                        </div>
+                        <div class="rocket_wrapper" style="top:-9rem; transform: scale(0.5) translateX(-20rem)">
                             <img src="images/arrow.svg" class="arrow" alt="" />
                             <img src="images/rocket_jet_transparent.png" class="jet" alt="" />
                         </div>
 
                         <!-- Right side -->
-                        <div class="rocket_wrapper" style="top:-5rem; transform: scale(0.3); margin-left: 11rem;">
+                        <div class="rocket_wrapper" style="top:-6rem; transform: scale(0.3) translateX(13rem);">
                             <img src="images/arrow.svg" class="arrow" alt="" />
                             <img src="images/rocket_jet_transparent.png" class="jet" alt="" />
                         </div>
-                        <div class="rocket_wrapper" style="top:-7rem; transform: scale(0.5); margin-left: 20rem;">
+                        <div class="rocket_wrapper" style="top:-2rem; transform: scale(0.6) translateX(17rem);">
                             <img src="images/arrow.svg" class="arrow" alt="" />
                             <img src="images/rocket_jet_transparent.png" class="jet" alt="" />
                         </div>
                         
 
-                        <div class="cloud-container" style="position: absolute; margin-top: -500px; height: 200px;">
-                            <div class="cloud" style="height: 300px;" id="cloud-back"></div>
-                            <div class="cloud" style="height: 300px;" id="cloud-mid"></div>
+                        <div class="cloud-container">
+                            <div class="cloud" id="cloud-back"></div>
+                            <div class="cloud" id="cloud-mid"></div>
                             <div class="cloud hidden" id="cloud-front"></div>
                             <div class="cloud-image">
                                 <img src="images/clouds/static-cloud.png" alt="">
@@ -470,7 +475,7 @@
                         <h3>Let's Chat</h3>
                         <p>Use the form below to start a conversation on how to get started.</p>
                         <p class="required">* = Required</p>
-                        <form action="" method="POST" class="pt-2">
+                        <form action="" method="POST" id="contact-form" class="pt-2">
                             <div class="flex full-width">
                                 <div class="flex-half">
                                     <label for="name">Name<span class="required">*</span></label>
@@ -496,7 +501,7 @@
                                 <div class="form-space flex-half">
                                     <label for="url">Website URL</label>
                                     <div class="input-wrapper">
-                                        <span class="prefix">https://</span><input type="url" id="url" placeholder="example.com" />
+                                        <span class="prefix">https://</span><input type="text" id="url" placeholder="example.com" />
                                     </div>
                                 </div>
                             </div>
@@ -510,11 +515,15 @@
                             </div>
                             
                             <div class="pb-1">
-                                <button class="btn">
-                                    Submit <i class="fa-solid fa-paper-plane"></i>
+                                <button class="btn" id="submit-button">
+                                    <span id="submit-text">Submit</span> <i class="fa-solid fa-paper-plane" id="submit-icon"></i>
                                 </button>
                             </div>
                         </form>
+                    </div>
+                    <div class="contact-thank-you">
+                        <h3>Submitted!</h3>
+                        <p>Thank you for your submission. You should expect a reply within 1-2 business days.</p>
                     </div>
                     <div class="decoration__contact-stripes"></div>
                 </div>
@@ -529,18 +538,9 @@
 
     <footer>
         <div class="watermelon-stripes"></div>
-        <div class="box-wrapper flex">
-            <div class="flex-half p-1" style="text-align: right;">
-                <h3>Royer Web Design</h3>
-                <p>Serving the Willamette Valley since 2009</p>
-            </div>
-            <div class="flex-half p-1">
-                <p>Home</p>
-                <p>Designs</p>
-                <p>Portfolio</p>
-                <p>Pricing</p>
-                <p>Contact</p>
-            </div>
+        <div class="box-wrapper text-center p-1 pt-2 pb-3">
+            <h3>Royer Web Design</h3>
+            <p>Serving the Willamette Valley since 2009</p>
         </div>
         
     </footer>
@@ -637,6 +637,29 @@
                 <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="3" seed="563">
                 </feTurbulence>
                 <feDisplacementMap in="SourceGraphic" scale="120" />
+            </filter>
+
+
+
+
+
+            <!-- Non-Animated MOBILE -->
+            <filter id="filter-back-noanimate-mobile">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="563">
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" scale="160" />
+            </filter>
+        
+            <filter id="filter-mid-noanimate-mobile">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="563">
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" scale="160" />
+            </filter>
+        
+            <filter id="filter-front-noanimate-mobile">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" seed="563">
+                </feTurbulence>
+                <feDisplacementMap in="SourceGraphic" scale="160" />
             </filter>
             </svg>
 

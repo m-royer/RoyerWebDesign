@@ -1,5 +1,6 @@
 "use strict";
 
+// Mobile nav functionality
 let menuToggle = document.getElementById("menuToggle");
 let navItemsUL = document.getElementById("menuItems");
 let body = document.body;
@@ -10,8 +11,6 @@ let menuItemsArray = Array.from(navItemsUL.children);
 menuItemsArray.forEach((el) => {
     el.addEventListener("click", closeMenu);
 });
-
-
 
 function openMenu(event) {
     console.log("opened");
@@ -28,7 +27,7 @@ function closeMenu(event) {
 
 
 
-// scrollyspy nav
+// scrollyspy desktop nav
 
 const sections = document.querySelectorAll('section');
 const navItems = navItemsUL.children;
@@ -52,4 +51,39 @@ const observer = new IntersectionObserver(
 
 sections.forEach((section) => {
     observer.observe(section);
+});
+
+
+
+// Contact form submit
+const form = document.getElementById("contact-form");
+const submitButton = document.getElementById("submit-button");
+const submitButtonText = document.getElementById("submit-text");
+const submitButtonIcon = document.getElementById("submit-icon");
+const thankYouMessage = document.querySelector(".contact-thank-you");
+
+async function submitContactForm(data) {
+    const formData = new FormData();
+
+    submitButton.disabled = true;
+    submitButtonIcon.classList.remove("fa-paper-plane");
+    submitButtonIcon.classList.add("fa-spinner", "anim-rotating");
+
+    /*
+    try {
+        const response = await fetch("https://royerwebdesign.com/submit", {
+            body: formData,
+        });
+    } catch(e) {
+        console.error(e);
+    }
+    */
+
+    console.log("Submitted");
+    thankYouMessage.classList.add("show-thank-you");
+}
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitContactForm();
 });
