@@ -414,7 +414,7 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
     background: #000;
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 300ms ease;
+    transition: transform 150ms ease;
   }
   nav .nav_wrapper ul li a {
     width: 100%;
@@ -938,6 +938,7 @@ form .prefix ~ input {
   position: absolute;
   width: 100%;
   height: 100%;
+  text-align: center;
   background: #FFF;
   top: 0;
   left: 0;
