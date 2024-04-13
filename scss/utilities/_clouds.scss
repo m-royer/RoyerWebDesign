@@ -28,19 +28,19 @@
 
 
 #cloud-back {
-    filter: url(#filter-back);
+    filter: url(#filter-back-noanimate);
     box-shadow: 300px 390px 30px -20px #fff;
     height: 300px;
 }
 
 #cloud-mid {
-    filter: url(#filter-mid);
+    filter: url(#filter-mid-noanimate);
     box-shadow: 300px 430px 70px -60px rgba(158, 168, 179, 0.5);
     height: 300px;
 }
 
 #cloud-front {
-    filter: url(#filter-front);
+    filter: url(#filter-front-noanimate);
     box-shadow: 300px 470px 60px -100px rgba(0, 0, 0, 0.3);
     height: 300px;
 }
