@@ -262,3 +262,9 @@ nav {
         margin-top: -1rem;
     }
 }
+
+@media screen and (max-width: $breakpoint) {
+    .header-text .title-sub-text {
+        margin-top: 0;
+    }
+}

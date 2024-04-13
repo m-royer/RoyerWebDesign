@@ -558,6 +558,11 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
   margin-top: -1rem;
 }
 
+@media screen and (max-width: 900px) {
+  .header-text .title-sub-text {
+    margin-top: 0;
+  }
+}
 main {
   position: relative;
   z-index: 100;
@@ -593,7 +598,7 @@ section {
   text-align: center;
   font-size: clamp(4.5rem, 9vw, 7rem);
   line-height: 0.7;
-  margin-bottom: max(-3.5vw, -2.5rem);
+  margin-bottom: 1rem;
 }
 @supports (-webkit-appearance: none) {
   .headline {
