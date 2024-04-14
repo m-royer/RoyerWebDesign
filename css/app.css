@@ -33,6 +33,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   background: #84C044;
   background-image: url("../images/bg.png");
@@ -43,7 +47,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
 }
 
 blockquote, q {
