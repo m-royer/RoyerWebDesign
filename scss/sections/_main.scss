@@ -34,7 +34,7 @@ section {
     @include comic-header-font-highlighted();
     text-align: center;
     font-size: clamp(4.5rem,9vw,7rem);
-    line-height: 0.7; // for multi-line titles
+    line-height: 0.7;
     margin-bottom: 1rem;
 
     & > span {
