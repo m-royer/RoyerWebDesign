@@ -43,7 +43,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  contain: paint;
+  /*contain: paint;  -- bad performance (apr '24) */
+  overflow: clip;
 }
 
 blockquote, q {
