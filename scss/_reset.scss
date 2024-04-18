@@ -41,7 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    contain: paint;
 }
 
 blockquote, q {
