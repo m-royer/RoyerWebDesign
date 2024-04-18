@@ -259,7 +259,7 @@ strong {
   z-index: 50;
   width: 100%;
   max-width: 1440px;
-  padding: 0 2px;
+  padding: 0 4px;
   border-radius: 10px;
 }
 
@@ -777,7 +777,7 @@ section {
     margin-bottom: 4rem;
     top: 0;
     left: 0;
-    transform: scale(2);
+    transform: scale(1.5);
   }
   .design__elevate {
     padding: 5rem 1rem;
