@@ -13,7 +13,7 @@ footer {
             to bottom, 
             #bf556f, 
             #9b354e
-        );
+        )
     ;
     background-repeat: no-repeat;
     border-top: solid 3px #FFF;
@@ -37,26 +37,34 @@ footer {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        filter: blur(10px);
         opacity: 0.2;
-        z-index: $z-main + 2;
+        z-index: $z-main - 1;
     }
 
-    .title {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 800;
-        font-size: 2rem;
-        line-height: 2.4rem;
+    & .footer__content {
+        position: relative;
+        z-index: $z-main;
+        text-align: center;
     }
 
-    .sub-title {
-        font-size: 1rem;
-        line-height: 1.2rem;
+    & h3 {
+        font-size: 2.5rem;
     }
 
-    & .copyright{
+    .footer__icons {
+        margin-top: 1rem; 
         display: flex;
-        justify-content: center;
-        margin-top: 3rem;
+        width: 100%;
+        justify-content: center;        
+
+        & a {
+            margin: 0 0.5rem;
+            font-size: 3rem;
+            color: #FFF;
+        }
+
+        & a:hover {
+            color: #ddd;
+        }
     }
 }

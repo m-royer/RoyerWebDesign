@@ -1,1 +1,3 @@
-Done.
+<?php
+
+echo "Done.";
