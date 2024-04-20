@@ -90,6 +90,8 @@ async function submitContactForm(data) {
         console.log("Submitted");
         thankYouMessage.classList.add("show-thank-you");
 
+    } else {
+        console.log("not validated");
     }
 }
 
