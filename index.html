@@ -498,19 +498,19 @@
                         <p>Use the form below to start a conversation on how to get started. <br />
                         OR send me an email at <em>mike [at] royerwebdesign.com</em></p>
                         <p class="required">* = Required</p>
-                        <form action="" method="POST" id="contact-form" class="pt-2">
+                        <form action="/contact.php" method="POST" id="contact-form" class="pt-2">
                             <div class="flex full-width">
                                 <div class="flex-half">
                                     <label for="name">Name<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <input type="text" id="name" required />
+                                        <input type="text" id="name" name="name" required />
                                         <small id="name-error"></small>
                                     </div>
                                 </div>
                                 <div class="form-space flex-half">
                                     <label for="org-name">Organization Name</label>
                                     <div class="input-wrapper">
-                                        <input type="text" id="org-name" />
+                                        <input type="text" id="org-name" name="org-name" />
                                     </div>
                                 </div>
                             </div>
@@ -519,14 +519,14 @@
                                 <div class="flex-half">
                                     <label for="email">E-Mail<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <input type="email" id="email" placeholder="you@mail.com" required />
+                                        <input type="email" id="email" name="email" placeholder="you@mail.com" required />
                                         <small id="email-error"></small>
                                     </div>
                                 </div>
                                 <div class="form-space flex-half">
                                     <label for="url">Website URL</label>
                                     <div class="input-wrapper" style="flex-direction: row;">
-                                        <span class="prefix">https://</span><input type="text" id="url" placeholder="example.com" />
+                                        <span class="prefix">https://</span><input type="text" id="url" name="url" placeholder="example.com" />
                                     </div>
                                 </div>
                             </div>
@@ -535,11 +535,13 @@
                                 <div class="full-width">
                                     <label for="issue">How can I help you?<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <textarea id="message" rows="10" required></textarea>
+                                        <textarea id="message" name="message" rows="10" required></textarea>
                                         <small id="message-error"></small>
                                     </div>
                                 </div>
                             </div>
+
+                            <input type="hidden" name="nonce" value="gsYd5owyPgB8u6yp" />
                             
                             <div class="pb-1 mt-1">
                                 <button class="btn" id="submit-button">

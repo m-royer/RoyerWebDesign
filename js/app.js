@@ -67,7 +67,7 @@ let isValidName = false;
 let isValidMessage = false;
 
 async function submitContactForm(data) {
-    const formData = new FormData();
+    const formData = new FormData(form);
 
     submitButton.disabled = true;
     submitButtonIcon.classList.remove("fa-paper-plane");
@@ -80,7 +80,7 @@ async function submitContactForm(data) {
             const response = await fetch("https://test.royerwebdesign.com/contact.php", {
                 body: formData,
             });
-            console.log(await response);
+            console.log(await response.json());
         } catch(e) {
             console.error(e);
         }
