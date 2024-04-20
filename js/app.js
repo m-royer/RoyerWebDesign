@@ -62,6 +62,10 @@ const submitButtonText = document.getElementById("submit-text");
 const submitButtonIcon = document.getElementById("submit-icon");
 const thankYouMessage = document.querySelector(".contact-thank-you");
 
+let isValidEmail = false;
+let isValidName = false;
+let isValidMessage = false;
+
 async function submitContactForm(data) {
     const formData = new FormData();
 
@@ -69,21 +73,71 @@ async function submitContactForm(data) {
     submitButtonIcon.classList.remove("fa-paper-plane");
     submitButtonIcon.classList.add("fa-spinner", "anim-rotating");
 
-    /*
-    try {
-        const response = await fetch("https://royerwebdesign.com/submit", {
-            body: formData,
-        });
-    } catch(e) {
-        console.error(e);
-    }
-    */
+    if(isValidName && isValidEmail && isValidMessage) {
 
-    console.log("Submitted");
-    thankYouMessage.classList.add("show-thank-you");
+        
+        try {
+            const response = await fetch("https://test.royerwebdesign.com/contact.php", {
+                body: formData,
+            });
+            console.log(await response);
+        } catch(e) {
+            console.error(e);
+        }
+        
+
+        console.log("Submitted");
+        thankYouMessage.classList.add("show-thank-you");
+
+    }
 }
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     submitContactForm();
+});
+
+// validations
+const frmName = document.getElementById("name");
+const nameError = document.getElementById("name-error");
+
+const frmEmail = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+
+const frmMessage = document.getElementById("message");
+const messageError = document.getElementById("message-error");
+
+const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+frmName.addEventListener("input", () => {
+    isValidName = frmName.value.length !== 0;
+    if (isValidName) {
+        nameError.textContent = "";
+        frmName.classList.remove("invalid");
+    } else {
+        frmName.classList.add("invalid");
+        nameError.textContent = "A name is required"
+    }
+});
+
+frmEmail.addEventListener("input", () => {
+    isValidEmail = frmEmail.value.length !== 0 && emailRegExp.test(frmEmail.value);
+    if (isValidEmail) {
+        emailError.textContent = "";
+        frmEmail.classList.remove("invalid");
+    } else {
+        frmEmail.classList.add("invalid");
+        emailError.textContent = "A valid email is required"
+    }
+});
+
+frmMessage.addEventListener("input", () => {
+    isValidMessage = frmMessage.value.length !== 0;
+    if (isValidMessage) {
+        messageError.textContent = "";
+        frmMessage.classList.remove("invalid");
+    } else {
+        frmMessage.classList.add("invalid");
+        messageError.textContent = "Please tell me a little about what you're looking for"
+    }
 });

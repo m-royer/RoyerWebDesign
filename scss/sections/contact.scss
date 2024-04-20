@@ -21,13 +21,23 @@ form {
     height: 100%;
     color: #444;
 
-    & label {
-        
-    }
-
     & .input-wrapper {
         width: 100%;
         display: flex;
+        flex-direction: column;
+
+        & small {
+            background: rgb(151, 15, 15);
+            color: #FFF;
+            margin-top: -9px;
+            border-radius: 0 0 5px 5px;
+            padding: 5px;
+            font-size: 0.8rem;
+        }
+        
+        & small:empty {
+            display: none;
+        }
     }
 
     & input[type=text], input[type=email], input[type=url], select, textarea {
@@ -49,8 +59,20 @@ form {
         border-right: none;
     }
 
+    input:focus, input:focus-within {
+        border-color: green;
+    }
+
     .prefix ~ input {
         border-radius: 0 5px 5px 0;
+    }
+
+    input.invalid {
+        border-color: #900;
+    }
+    
+    input:focus:invalid {
+        outline: none;
     }
 }
 

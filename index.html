@@ -495,14 +495,16 @@
                     <div class="decoration__contact-stripes"></div>
                     <div class="p-1" style="width: 100%; max-width: 700px;">
                         <h3>Let's Chat</h3>
-                        <p>Use the form below to start a conversation on how to get started.</p>
+                        <p>Use the form below to start a conversation on how to get started. <br />
+                        OR send me an email at <em>mike [at] royerwebdesign.com</em></p>
                         <p class="required">* = Required</p>
                         <form action="" method="POST" id="contact-form" class="pt-2">
                             <div class="flex full-width">
                                 <div class="flex-half">
                                     <label for="name">Name<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <input type="text" id="name" />
+                                        <input type="text" id="name" required />
+                                        <small id="name-error"></small>
                                     </div>
                                 </div>
                                 <div class="form-space flex-half">
@@ -513,30 +515,33 @@
                                 </div>
                             </div>
 
-                            <div class="flex full-width">
+                            <div class="flex full-width mt-1">
                                 <div class="flex-half">
                                     <label for="email">E-Mail<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <input type="email" id="email" placeholder="you@mail.com" />
+                                        <input type="email" id="email" placeholder="you@mail.com" required />
+                                        <small id="email-error"></small>
                                     </div>
                                 </div>
                                 <div class="form-space flex-half">
                                     <label for="url">Website URL</label>
-                                    <div class="input-wrapper">
+                                    <div class="input-wrapper" style="flex-direction: row;">
                                         <span class="prefix">https://</span><input type="text" id="url" placeholder="example.com" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex full-width">
-                                <div class="pt-1 pb-1 full-width">
+
+                            <div class="flex full-width mt-1">
+                                <div class="full-width">
                                     <label for="issue">How can I help you?<span class="required">*</span></label>
                                     <div class="input-wrapper">
-                                        <textarea id="issue" rows="10"></textarea>
+                                        <textarea id="message" rows="10" required></textarea>
+                                        <small id="message-error"></small>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="pb-1">
+                            <div class="pb-1 mt-1">
                                 <button class="btn" id="submit-button">
                                     <span id="submit-text">Submit</span> <i class="fa-solid fa-paper-plane" id="submit-icon"></i>
                                 </button>

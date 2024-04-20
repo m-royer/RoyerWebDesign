@@ -912,6 +912,18 @@ form {
 form .input-wrapper {
   width: 100%;
   display: flex;
+  flex-direction: column;
+}
+form .input-wrapper small {
+  background: rgb(151, 15, 15);
+  color: #FFF;
+  margin-top: -9px;
+  border-radius: 0 0 5px 5px;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+form .input-wrapper small:empty {
+  display: none;
 }
 form input[type=text], form input[type=email], form input[type=url], form select, form textarea {
   background: #f9f9f9;
@@ -930,8 +942,17 @@ form .prefix {
   border-radius: 5px 0 0 5px;
   border-right: none;
 }
+form input:focus, form input:focus-within {
+  border-color: green;
+}
 form .prefix ~ input {
   border-radius: 0 5px 5px 0;
+}
+form input.invalid {
+  border-color: #900;
+}
+form input:focus:invalid {
+  outline: none;
 }
 
 .btn {
