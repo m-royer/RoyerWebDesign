@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['nonce'] == "gsYd5owyPgB8u6yp"
     
 
     echo json_encode($output_array);
+    die();
 }
 
 echo "Ah ah ah, you didn't say the magic word!";
