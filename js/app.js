@@ -78,6 +78,7 @@ async function submitContactForm(data) {
         
         try {
             const response = await fetch("https://test.royerwebdesign.com/contact.php", {
+                method: 'POST',
                 body: formData,
             });
             console.log(await response.json());
