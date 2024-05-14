@@ -1,0 +1,7 @@
+<Files ".*">
+    # 404 Not Found
+    Redirect 404 /
+
+    # OR... 403 Forbidden
+    #Require all denied
+</Files>
