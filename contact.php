@@ -34,8 +34,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['nonce'] == "gsYd5owyPgB8u6yp"
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
         //Recipients
-        $mail->setFrom('mike@royerwebdesign.com', 'Mailer');
-        $mail->addAddress('mike@royerwebdesign.com', 'RoyerWebDesign Mailer');     //Add a recipient
+        $mail->setFrom('mailer@royerwebdesign.com', 'RoyerWebDesign Mailer');
+        $mail->addAddress('mike@royerwebdesign.com', 'Mike Royer');     //Add a recipient
         $mail->addReplyTo($sender_email, $sender_name);
     
         //Content
