@@ -77,7 +77,7 @@ async function submitContactForm(data) {
 
         
         try {
-            const response = await fetch("https://test.royerwebdesign.com/contact.php", {
+            const response = await fetch("contact.php", {
                 method: 'POST',
                 body: formData,
             });
