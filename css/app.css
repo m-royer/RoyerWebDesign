@@ -557,7 +557,6 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
   color: #444;
   font-size: min(15vw, 3rem);
   line-height: min(12vw, 4rem);
-  margin-top: -1rem;
 }
 
 @media screen and (max-width: 900px) {
@@ -600,7 +599,7 @@ section {
   text-align: center;
   font-size: clamp(4.5rem, 9vw, 7rem);
   line-height: 0.7;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 @supports (-webkit-appearance: none) {
   .headline {
