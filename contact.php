@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     $sender_org_name = filter_input(INPUT_POST, 'org-name', FILTER_SANITIZE_STRING);
     $sender_email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
     $sender_url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_STRING);
-    $sender_message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+    $sender_message = nl2br( filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING) );
 
     $output_array['name'] = $sender_name;
     $output_array['org-name'] = $sender_org_name;
@@ -62,7 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     </style>
     </head>
     <body>
-    <p style=\"font-size: 1.1em; font-weight: bold\">New Royer Web Design message from {$sender_name}.</p>
+    <p style=\"font-size: 1.1em; font-weight: bold; text-align: center; \">New Royer Web Design message from {$sender_name}.</p>
     <table cols=2>
         <tr>
         <td>
