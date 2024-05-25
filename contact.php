@@ -94,13 +94,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'mailer@royerwebdesign.com';                     //SMTP username
+        $mail->Username   = 'websend@royerwebdesign.com';                     //SMTP username
         $mail->Password   = getenv("SMTP_PASS");                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
         //Recipients
-        $mail->setFrom('mailer@royerwebdesign.com', 'RoyerWebDesign Mailer');
+        $mail->setFrom('websend@royerwebdesign.com', 'RoyerWebDesign Mailer');
         $mail->addAddress('mike@royerwebdesign.com', 'Mike Royer');     //Add a recipient
         $mail->addReplyTo($sender_email, $sender_name);
     
