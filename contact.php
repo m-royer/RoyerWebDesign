@@ -8,10 +8,10 @@ require_once(".env");
 
 session_start();
 
-$token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
-
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token']) {
+
+    $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
 
     // Setup
     $output_array = [];
@@ -92,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -118,7 +118,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
         $output_array["error"] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
     
-
     echo json_encode($output_array);
     die();
 }
