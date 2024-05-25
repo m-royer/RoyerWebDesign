@@ -8,10 +8,8 @@ require_once(".env");
 
 session_start();
 
-
+$token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
 if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token']) {
-
-    $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
 
     // Setup
     $output_array = [];
