@@ -30,17 +30,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     <html>
     <head>
     <style>
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+
         body {
             font: Arial 18px;
             background: #FFFFFF;
             color: #222;
+            text-align: center;
         }
 
         table {
             background: #f1f1f1;
-            padding: 2px;
+            padding: 20px;
+            width: 100%;
             max-width: 600px;
-            margin: 5px;
+            margin: 10px auto;
         }
 
         tr {
@@ -49,13 +56,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
 
         td {
             padding: 2px;
-            margin: 3px;
+            margin: 10px;
             background: #dcf0f4;
         }
     </style>
     </head>
     <body>
-    <p style=\"font-size: 1.1em;\">New Royer Web Design message from {$sender_name}.</p>
+    <p style=\"font-size: 1.1em; font-weight: bold\">New Royer Web Design message from {$sender_name}.</p>
     <table cols=2>
         <tr>
         <td>
@@ -71,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
         <tr>
         <td colspan=2>
             Web URL: <br />
-            <a href=\"{$sender_url}\">{$sender_url}</a>
+            <a href=\"https://{$sender_url}\">{$sender_url}</a>
         </td>
         </tr>
 
@@ -90,7 +97,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
