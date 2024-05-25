@@ -57,10 +57,28 @@ sections.forEach((section) => {
 
 // Contact form submit
 const form = document.getElementById("contact-form");
+const frmName = document.getElementById("name");
+const nameError = document.getElementById("name-error");
+
+const frmOrg = document.getElementById("org-name");
+const frmURL = document.getElementById("url");
+
+const frmEmail = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+
+const frmMessage = document.getElementById("message");
+const messageError = document.getElementById("message-error");
+
 const submitButton = document.getElementById("submit-button");
 const submitButtonText = document.getElementById("submit-text");
 const submitButtonIcon = document.getElementById("submit-icon");
+
 const thankYouMessage = document.querySelector(".contact-thank-you");
+const resultsName = document.getElementById("contactResultsName");
+const resultsOrg = document.getElementById("contactResultsOrg");
+const resultsEmail = document.getElementById("contactResultsEmail");
+const resultsURL = document.getElementById("contactResultsURL");
+const resultsMessage = document.getElementById("contactResultsMessage");
 
 let isValidEmail = false;
 let isValidName = false;
@@ -73,7 +91,7 @@ async function submitContactForm(data) {
     submitButtonIcon.classList.remove("fa-paper-plane");
     submitButtonIcon.classList.add("fa-spinner", "anim-rotating");
 
-    if(isValidName && isValidEmail && isValidMessage) {
+    if(validateName() && validateEmail() && validateMessage()) {
 
         
         try {
@@ -87,11 +105,18 @@ async function submitContactForm(data) {
         }
         
 
-        console.log("Submitted");
+        resultsName.innerText = frmName.value;
+        resultsOrg.innerText = frmOrg.value;
+        resultsEmail.innerText = frmEmail.value;
+        resultsURL.innerText = frmURL.value;
+        resultsMessage.innerText = frmMessage.value;
         thankYouMessage.classList.add("show-thank-you");
 
     } else {
         console.log("not validated");
+        submitButton.disabled = false;
+        submitButtonIcon.classList.add("fa-paper-plane");
+        submitButtonIcon.classList.remove("fa-spinner", "anim-rotating");
     }
 }
 
@@ -101,19 +126,21 @@ form.addEventListener("submit", (event) => {
 });
 
 // validations
-const frmName = document.getElementById("name");
-const nameError = document.getElementById("name-error");
-
-const frmEmail = document.getElementById("email");
-const emailError = document.getElementById("email-error");
-
-const frmMessage = document.getElementById("message");
-const messageError = document.getElementById("message-error");
 
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+function validateName() {
+    return frmName.value.length !== 0;
+}
+function validateEmail() {
+    return frmEmail.value.length !== 0 && emailRegExp.test(frmEmail.value);
+}
+function validateMessage() {
+    return frmMessage.value.length !== 0;
+}
+
 frmName.addEventListener("input", () => {
-    isValidName = frmName.value.length !== 0;
+    isValidName = validateName();
     if (isValidName) {
         nameError.textContent = "";
         frmName.classList.remove("invalid");
@@ -124,7 +151,7 @@ frmName.addEventListener("input", () => {
 });
 
 frmEmail.addEventListener("input", () => {
-    isValidEmail = frmEmail.value.length !== 0 && emailRegExp.test(frmEmail.value);
+    isValidEmail = validateEmail();
     if (isValidEmail) {
         emailError.textContent = "";
         frmEmail.classList.remove("invalid");
@@ -135,7 +162,7 @@ frmEmail.addEventListener("input", () => {
 });
 
 frmMessage.addEventListener("input", () => {
-    isValidMessage = frmMessage.value.length !== 0;
+    isValidMessage = validateMessage();
     if (isValidMessage) {
         messageError.textContent = "";
         frmMessage.classList.remove("invalid");

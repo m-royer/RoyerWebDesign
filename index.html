@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+
+session_start();
+
+$_SESSION['token'] = md5(uniqid(mt_rand(), true));
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -22,7 +28,7 @@
     <script src="https://kit.fontawesome.com/38c1fc1524.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <a id="top"></a>
     <nav>
         <div class="nav_wrapper">
             <a id="menuToggle" class="mobile_menu"><i class="fa-solid fa-bars"></i> MENU</a>
@@ -32,7 +38,6 @@
                 <li data-section="section__portfolio"><a href="#portfolio">PORTFOLIO</a></li>
                 <li data-section="section__pricing"><a href="#pricing">PRICING</a></li>
                 <li data-section="section__contact"><a href="#contact">CONTACT</a></li>
-                <li><a href="https://blog.royerwebdesign.com/">BLOG</a></li>
             </ul>
         </div>
     </nav>
@@ -103,7 +108,6 @@
 
 
     <section class="section__home">
-        <a id="top" class="pt-8"></a>
         <h2 class="headline"><span>L</span>ocal to <span>O</span>regon</h2>
         <div class="box-wrapper mb-5">
             <div class="box-border box-blur">
@@ -499,8 +503,6 @@
                         OR send me an email at <em>mike [at] royerwebdesign.com</em></p>
                         <p class="required">* = Required</p>
 
-                        <p class="required" style="font-size:2rem;">NOTE: currently being tested [not working]</p>
-
                         <form action="/contact.php" method="POST" id="contact-form" class="pt-2">
                             <div class="flex full-width">
                                 <div class="flex-half">
@@ -544,7 +546,7 @@
                                 </div>
                             </div>
 
-                            <input type="hidden" name="nonce" value="gsYd5owyPgB8u6yp" />
+                            <input type="hidden" name="token" value="<?php echo $_SESSION['token'] ?? '' ?>" />
                             
                             <div class="pb-1 mt-1">
                                 <button class="btn" id="submit-button">
@@ -554,8 +556,41 @@
                         </form>
                     </div>
                     <div class="contact-thank-you">
-                        <h3>Submitted!</h3>
-                        <p>Thank you for your submission. You should expect a reply within 1-2 business days.</p>
+                        <div style="width: 100%; max-width: 700px;">
+                            <h3>Submitted!</h3>
+                            <p>Thank you for your submission. You should expect a reply within 1-2 business days.</p>
+                            <div class="contact-results-wrapper ">
+                                <div class="flex">
+                                    <div class="flex-half m-1">
+                                        <p>Name:</p>
+                                        <div class="contact-results-text-bg" id="contactResultsName"></div>
+                                    </div>
+                                    <div class="flex-half m-1">
+                                        <p>Organization Name:</p>
+                                        <div class="contact-results-text-bg" id="contactResultsOrg"></div>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="flex-half m-1">
+                                        <p>E-Mail:</p>
+                                        <div class="contact-results-text-bg" id="contactResultsEmail"></div>
+                                    </div>
+                                    <div class="flex-half m-1">
+                                        <p>Website URL:</p>
+                                        <div class="contact-results-text-bg" id="contactResultsURL"></div>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="full-width m-1">
+                                        <p>Message: <br /></p>
+                                        <div class="contact-results-text-bg full-width" id="contactResultsMessage"></div>
+                                    </div>
+                                </div>
+                                <div class="flex full-width">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="decoration__contact-stripes"></div>
                 </div>

@@ -6,25 +6,93 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 require_once(".env");
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['nonce'] == "gsYd5owyPgB8u6yp") {
+session_start();
+
+$token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_STRING);
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token']) {
 
     // Setup
     $output_array = [];
-    $sender_name = htmlspecialchars($_POST['name']);
-    $sender_email = htmlspecialchars($_POST['email']);
-    $sender_message = htmlspecialchars($_POST['message']);
+    $sender_name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $sender_org_name = filter_input(INPUT_POST, 'org-name', FILTER_SANITIZE_STRING);
+    $sender_email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+    $sender_url = filter_input(INPUT_POST, 'url', FILTER_SANITIZE_STRING);
+    $sender_message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
 
     $output_array['name'] = $sender_name;
-    $output_array['org-name'] = htmlspecialchars($_POST['org-name']);
+    $output_array['org-name'] = $sender_org_name;
     $output_array['email'] = $sender_email;
-    $output_array['url'] = htmlspecialchars($_POST['url']);
+    $output_array['url'] = $sender_url;
     $output_array['message'] = $sender_message;
+
+    // Hardcoded because this is small and only going to me
+    $body = ("
+    <html>
+    <head>
+    <style>
+        body {
+            font: Arial 18px;
+            background: #FFFFFF;
+            color: #222;
+        }
+
+        table {
+            background: #f1f1f1;
+            padding: 2px;
+            max-width: 600px;
+            margin: 5px;
+        }
+
+        tr {
+            margin: 1px 0;
+        }
+
+        td {
+            padding: 2px;
+            margin: 3px;
+            background: #dcf0f4;
+        }
+    </style>
+    </head>
+    <body>
+    <p style=\"font-size: 1.1em;\">New Royer Web Design message from {$sender_name}.</p>
+    <table cols=2>
+        <tr>
+        <td>
+            Name: <br />
+            {$sender_name}
+        </td>
+        <td>
+            Organization: <br />
+            {$sender_org_name}
+        </td>
+        </tr>
+
+        <tr>
+        <td colspan=2>
+            Web URL: <br />
+            <a href=\"{$sender_url}\">{$sender_url}</a>
+        </td>
+        </tr>
+
+        <tr>
+        <td colspan=2>
+            Message: <br />
+            {$sender_message}
+        </td>
+        </tr>
+    </table>
+    </body>
+    </html>
+    ");
 
     // send the mail
     $mail = new PHPMailer(true);
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.dreamhost.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -39,9 +107,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $_POST['nonce'] == "gsYd5owyPgB8u6yp"
         $mail->addReplyTo($sender_email, $sender_name);
     
         //Content
-        $mail->isHTML(false);                                  //Set email format to HTML
+        $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'New message from RoyerWebDesign';
-        $mail->Body    = $sender_message;
+        $mail->Body    = $body;
     
         $mail->send();
         $output_array["success"] = "true";
