@@ -445,6 +445,7 @@ nav .nav_wrapper ul li:hover a, nav .nav_wrapper ul li:active a, nav .nav_wrappe
   width: 100%;
   max-width: none;
   height: 100vw;
+  max-height: 100vh;
   overflow: hidden;
   position: absolute;
   /* background */
@@ -1009,10 +1010,9 @@ form input:focus:invalid {
 }
 
 .contact-results-text-bg {
-  background: #dcf0f4;
+  background: #f5f8fb;
   width: 100%;
-  padding: 2px;
-  margin: 2px;
+  padding: 5px;
 }
 
 .anim-rotating {
@@ -1720,6 +1720,11 @@ hr {
 
 .full-width {
   width: 100%;
+}
+
+.full-size-wrap {
+  width: 100%;
+  max-width: 1000px;
 }
 
 .container-relative {

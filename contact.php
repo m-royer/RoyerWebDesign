@@ -25,41 +25,46 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
     $output_array['url'] = $sender_url;
     $output_array['message'] = $sender_message;
 
-    // Hardcoded because this is small and only going to me
+    // Hardcoding because this is small and only going to me
     $body = ("
     <html>
     <head>
-    <style>
-        html,body {
-            width: 100%;
-            height: 100%;
-        }
+        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+        <link href=\"https://fonts.googleapis.com/css2?family=Roboto&display=swap\" rel=\"stylesheet\">
+        <style>
+            html,body {
+                width: 100%;
+                height: 100%;
+            }
 
-        body {
-            font: Arial 18px;
-            background: #FFFFFF;
-            color: #222;
-            text-align: center;
-        }
+            body {
+                font-family: \"Roboto\", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                background: #f1f1f1;
+                color: #333;
+                text-align: center;
+            }
 
-        table {
-            background: #f1f1f1;
-            padding: 20px;
-            width: 100%;
-            max-width: 600px;
-            margin: 10px auto;
-        }
+            table {
+                border-spacing: 10px;
+                width: 100%;
+                max-width: 600px;
+                margin: 10px auto;
 
-        tr {
-            margin: 1px 0;
-        }
+            }
 
-        td {
-            padding: 2px;
-            margin: 10px;
-            background: #dcf0f4;
-        }
-    </style>
+            tr {
+                margin: 1px 0;
+            }
+
+            td {
+                padding: 5px;
+                background: #c6e6f9;
+                border: solid 1px #a5c7db;
+            }
+        </style>
     </head>
     <body>
     <p style=\"font-size: 1.1em; font-weight: bold; text-align: center; \">New Royer Web Design message from {$sender_name}.</p>

@@ -63,7 +63,7 @@ $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
 
 <main>
-    <div class="flex flex-space-between mb-5" style="max-width: 1000px;">
+    <div class="flex flex-space-between mb-5 full-size-wrap">
         <div class="box-comic m-1">
             <div class="box-title text-center">
                 <h3>BUSINESS</h3>
@@ -107,7 +107,7 @@ $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
 
 
-    <section class="section__home">
+    <section class="section__home mt-10">
         <h2 class="headline"><span>L</span>ocal to <span>O</span>regon</h2>
         <div class="box-wrapper mb-5">
             <div class="box-border box-blur">
@@ -131,11 +131,14 @@ $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                                 <h2 class="section-headline" style="max-width: 16ch;">SERVING THE WILLAMETTE VALLEY</h2>
                             </div>
                             <hr />
-                            <div class="p-1 flex flex-center">
+                            <div class="p-1 flex flex-col">
                                 <p style="max-width: 50ch; line-height: 1.4;">
                                 From Portland to Eugene and everywhere in-between I build websites for local businesses in the Willamette Valley. 
                                 No matter the area of business, I bring your best to the web. Let your potential customers know about you in the 
                                 finest light with expert photographs tailored for web design from someone local to the area. 
+                                </p>
+                                <p class="mt-2" style="margin-bottom:-1rem;">
+                                    <a href="#" class="btn">Learn More</a>
                                 </p>
                             </div>
                         </div>
@@ -155,7 +158,7 @@ $_SESSION['token'] = md5(uniqid(mt_rand(), true));
 
     <a id="design" class="pt-8"></a>
     <section class="section__design">
-        <h2 class="headline"><span>G</span>reat <span>D</span>esign</h2>
+        <h2 class="headline"><span>U</span>nique <span>D</span>esigns</h2>
         <div class="box-wrapper mb-1">
             <div class="box-border box-blur">
                 <div class="box flex sm-flex-reverse">
