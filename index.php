@@ -137,9 +137,6 @@ $_SESSION['token'] = md5(uniqid(mt_rand(), true));
                                 No matter the area of business, I bring your best to the web. Let your potential customers know about you in the 
                                 finest light with expert photographs tailored for web design from someone local to the area. 
                                 </p>
-                                <p class="mt-2" style="margin-bottom:-1rem;">
-                                    <a href="#" class="btn">Learn More</a>
-                                </p>
                             </div>
                         </div>
 
