@@ -42,6 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
                 font-family: \"Roboto\", sans-serif;
                 font-weight: 400;
                 font-style: normal;
+                font-size: 14px;
                 background: #f1f1f1;
                 color: #333;
                 text-align: center;
@@ -63,6 +64,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
                 padding: 5px;
                 background: #c6e6f9;
                 border: solid 1px #a5c7db;
+            }
+
+            p {
+                width: 100%;
+                max-width: 600px;
+                font-size: 9px;
             }
         </style>
     </head>
@@ -94,6 +101,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && $token && $token == $_SESSION['token'
         </td>
         </tr>
     </table>
+    <p>IP: {$_SERVER['REMOTE_ADDR']}</p>
+    <p>Agent: {$_SERVER['HTTP_USER_AGENT']}</p>
     </body>
     </html>
     ");
